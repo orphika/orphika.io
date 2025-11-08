@@ -1,16 +1,6 @@
 // Configuration Formspree - VOTRE ID
 const FORMSPREE_URL = 'https://formspree.io/f/mqawzbpn';
 
-// Puis continue avec votre code existant :
-// Animations au scroll
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-// ... (le reste de votre code)
-// Configuration pour site vitrine sécurisé
-// Aucun cookie - RGPD compliant
-
 // Animations au scroll
 const observerOptions = {
     threshold: 0.1,
@@ -80,13 +70,13 @@ function initCarousel() {
     setInterval(nextSlide, 5000);
 }
 
-// Gestion du formulaire simple (confirmation seulement)
+// Gestion du formulaire avec Formspree
 function initSimpleForm() {
     const form = document.getElementById('simpleContactForm');
     const messageDiv = document.getElementById('simpleFormMessage');
     
     if (form) {
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
             
             // Validation RGPD
@@ -94,18 +84,51 @@ function initSimpleForm() {
             if (!consent.checked) {
                 messageDiv.textContent = '❌ Vous devez accepter la politique de confidentialité';
                 messageDiv.className = 'form-message error';
+                messageDiv.style.display = 'block';
                 return;
             }
             
-            // Simulation d'envoi - site vitrine
-            messageDiv.textContent = '✅ Merci ! Nous vous contactons rapidement pour organiser votre démo.';
-            messageDiv.className = 'form-message success';
-            form.reset();
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
             
-            // Cacher le message après 5 secondes
-            setTimeout(() => {
-                messageDiv.style.display = 'none';
-            }, 5000);
+            // Désactiver le bouton
+            submitButton.disabled = true;
+            submitButton.innerHTML = 'ENVOI EN COURS...';
+            
+            try {
+                const formData = new FormData(form);
+                
+                // Envoi réel à Formspree
+                const response = await fetch(FORMSPREE_URL, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    messageDiv.textContent = '✅ Merci ! Nous vous contactons rapidement pour organiser votre démo.';
+                    messageDiv.className = 'form-message success';
+                    messageDiv.style.display = 'block';
+                    form.reset();
+                } else {
+                    throw new Error('Erreur lors de l\'envoi');
+                }
+            } catch (error) {
+                messageDiv.textContent = '❌ Erreur d\'envoi. Contactez-nous directement à support@orphika.io';
+                messageDiv.className = 'form-message error';
+                messageDiv.style.display = 'block';
+            } finally {
+                // Réactiver le bouton
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalText;
+                
+                // Cacher le message après 5 secondes
+                setTimeout(() => {
+                    messageDiv.style.display = 'none';
+                }, 5000);
+            }
         });
     }
 }
@@ -211,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialiser toutes les fonctionnalités
     initCarousel();
-    initSimpleForm();
+    initSimpleForm(); // ← Celle-ci est maintenant corrigée
     initSmoothScroll();
     initModals();
     initButtonActions();
