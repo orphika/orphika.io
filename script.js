@@ -1,6 +1,5 @@
-// Configuration Formspree - REMPLACEZ par votre vrai ID de formulaire
-// Allez sur https://formspree.io pour obtenir votre ID gratuit
-const FORMSPREE_URL = 'https://formspree.io/f/xjvnyyyl';
+// Configuration simple pour site vitrine
+// Pas besoin de Formspree compliqué pour un site vitrine
 
 // Animations au scroll
 const observerOptions = {
@@ -32,86 +31,29 @@ function animateStats() {
                 current = target;
                 clearInterval(timer);
             }
-            stat.textContent = Math.floor(current) + (stat.getAttribute('data-count') === '100' ? '%' : '');
+            stat.textContent = Math.floor(current);
         }, 16);
     });
 }
 
-// Accordéon Technologies
-function initAccordion() {
-    const accordionHeaders = document.querySelectorAll('.accordion-header');
-    
-    accordionHeaders.forEach(header => {
-        header.addEventListener('click', () => {
-            const content = header.nextElementSibling;
-            const icon = header.querySelector('.accordion-icon');
-            
-            // Fermer tous les autres
-            document.querySelectorAll('.accordion-content').forEach(item => {
-                if (item !== content) {
-                    item.classList.remove('active');
-                }
-            });
-            
-            document.querySelectorAll('.accordion-icon').forEach(item => {
-                if (item !== icon) {
-                    item.textContent = '+';
-                }
-            });
-            
-            // Basculer l'actuel
-            content.classList.toggle('active');
-            icon.textContent = content.classList.contains('active') ? '−' : '+';
-        });
-    });
-}
-
-// Gestion du formulaire
-function initContactForm() {
-    const form = document.getElementById('contactForm');
-    const messageDiv = document.getElementById('formMessage');
+// Gestion du formulaire simple (juste une confirmation)
+function initSimpleForm() {
+    const form = document.getElementById('simpleContactForm');
+    const messageDiv = document.getElementById('simpleFormMessage');
     
     if (form) {
-        form.addEventListener('submit', async (e) => {
+        form.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            const submitButton = form.querySelector('button[type="submit"]');
-            const originalText = submitButton.innerHTML;
+            // Simulation d'envoi - dans un vrai site vitrine, on redirige vers email
+            messageDiv.textContent = '✅ Merci ! Nous vous rappellerons très rapidement.';
+            messageDiv.className = 'form-message success';
+            form.reset();
             
-            // Désactiver le bouton
-            submitButton.disabled = true;
-            submitButton.innerHTML = 'ENVOI EN COURS...';
-            
-            try {
-                const formData = new FormData(form);
-                const response = await fetch(FORMSPREE_URL, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                
-                if (response.ok) {
-                    messageDiv.textContent = '✅ Message envoyé ! Nous vous répondons sous 24h.';
-                    messageDiv.className = 'form-message success';
-                    form.reset();
-                } else {
-                    throw new Error('Erreur lors de l\'envoi');
-                }
-            } catch (error) {
-                messageDiv.textContent = '❌ Erreur d\'envoi. Contactez-nous directement à support@orphika.io';
-                messageDiv.className = 'form-message error';
-            } finally {
-                // Réactiver le bouton
-                submitButton.disabled = false;
-                submitButton.innerHTML = originalText;
-                
-                // Cacher le message après 5 secondes
-                setTimeout(() => {
-                    messageDiv.style.display = 'none';
-                }, 5000);
-            }
+            // Cacher le message après 5 secondes
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 5000);
         });
     }
 }
@@ -166,9 +108,8 @@ function initButtonActions() {
     // Tous ces boutons redirigent vers la section contact
     const contactButtons = [
         '.cyber-button', // Demo gratuite nav
-        '.btn-primary', // Démarrer transformation
-        '.btn-secondary', // Visionner démo
-        '.cta-button-futurist' // Commencer maintenant
+        '.btn-primary', // Démarrer maintenant
+        '.btn-secondary' // Voir la démo
     ];
     
     contactButtons.forEach(selector => {
@@ -183,31 +124,10 @@ function initButtonActions() {
     });
 }
 
-// Effets de particules
-function createParticles() {
-    const particlesContainer = document.querySelector('.animated-bg');
-    if (!particlesContainer) return;
-    
-    for (let i = 0; i < 20; i++) {
-        const particle = document.createElement('div');
-        particle.style.cssText = `
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: var(--accent);
-            border-radius: 50%;
-            top: ${Math.random() * 100}%;
-            left: ${Math.random() * 100}%;
-            animation: floatParticle ${10 + Math.random() * 20}s linear infinite;
-        `;
-        particlesContainer.appendChild(particle);
-    }
-}
-
 // Initialisation complète
 document.addEventListener('DOMContentLoaded', () => {
     // Observer les éléments à animer
-    const animatedElements = document.querySelectorAll('.service-card, .stat-item, .step, .tech-item');
+    const animatedElements = document.querySelectorAll('.service-card, .stat-item, .case-item');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
@@ -228,32 +148,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (statsSection) statsObserver.observe(statsSection);
     
     // Initialiser toutes les fonctionnalités
-    initAccordion();
-    initContactForm();
+    initSimpleForm();
     initSmoothScroll();
     initModals();
     initButtonActions();
-    createParticles();
 });
-
-// Animation CSS pour les particules
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes floatParticle {
-        0% {
-            transform: translateY(0) translateX(0);
-            opacity: 0;
-        }
-        10% {
-            opacity: 1;
-        }
-        90% {
-            opacity: 1;
-        }
-        100% {
-            transform: translateY(-100vh) translateX(${Math.random() * 100 - 50}px);
-            opacity: 0;
-        }
-    }
-`;
-document.head.appendChild(style);
