@@ -383,6 +383,7 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
+    margin-bottom: 4rem;
 }
 
 .glass-card {
@@ -447,133 +448,51 @@ nav {
     color: var(--accent);
 }
 
-/* Technologies Détaillées */
-.techno-detailed {
-    padding: 100px 5%;
-    background: rgba(15, 15, 26, 0.9);
-}
-
-.tech-accordion {
-    max-width: 900px;
-    margin: 0 auto 4rem;
-}
-
-.accordion-item {
-    margin-bottom: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-.accordion-header {
-    padding: 1.5rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.accordion-header:hover {
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.accordion-header h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    color: var(--text);
-}
-
-.accordion-icon {
-    font-size: 1.5rem;
-    font-weight: 300;
-    transition: transform 0.3s ease;
-}
-
-.accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    padding: 0 2rem;
-}
-
-.accordion-content.active {
-    max-height: 500px;
-    padding: 0 2rem 2rem;
-}
-
-.accordion-content ul {
-    list-style: none;
-    padding: 0;
-}
-
-.accordion-content li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;
-    padding-left: 1.5rem;
-}
-
-.accordion-content li::before {
-    content: '▸';
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-}
-
-.accordion-content li:last-child {
-    border-bottom: none;
-}
-
-/* Process Steps */
-.process-steps {
+/* Use Cases */
+.use-cases {
     text-align: center;
 }
 
-.process-steps h3 {
-    font-size: 2rem;
-    margin-bottom: 3rem;
+.use-cases h3 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
     color: var(--accent);
 }
 
-.steps-grid {
+.cases-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
 }
 
-.step {
-    padding: 2rem;
+.case-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
 }
 
-.step-number {
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 0 auto 1rem;
+.case-item:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
 }
 
-.step h4 {
-    color: var(--accent);
-    margin-bottom: 1rem;
+.case-icon {
+    font-size: 2rem;
 }
 
 /* Contact Section */
 .contact-futurist {
     padding: 100px 5%;
-    background: rgba(10, 10, 18, 0.8);
+    background: rgba(15, 15, 26, 0.9);
 }
 
-.contact-grid {
+.contact-simple {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
@@ -601,19 +520,36 @@ nav {
     font-size: 1.5rem;
 }
 
-.contact-item strong {
-    display: block;
-    color: var(--accent);
+.contact-highlight {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    border-radius: 15px;
+    border: 1px solid var(--accent);
 }
 
-/* Formulaire amélioré */
+.contact-highlight p {
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Simple Form */
+.simple-form {
+    padding: 2rem;
+}
+
+.simple-form h4 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--accent);
+    font-size: 1.3rem;
+}
+
 .form-group {
     margin-bottom: 1.5rem;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
+.form-group input {
     width: 100%;
     padding: 1rem;
     background: rgba(255, 255, 255, 0.05);
@@ -624,44 +560,31 @@ nav {
     transition: all 0.3s ease;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
+.form-group input:focus {
     outline: none;
     border-color: var(--accent);
     background: rgba(255, 255, 255, 0.1);
 }
 
-.form-group select {
-    appearance: none;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right 1rem center;
-    background-size: 1rem;
-}
-
 .cta-button-futurist {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     border: none;
-    padding: 20px 40px;
+    padding: 15px 30px;
     color: white;
     font-family: 'Exo 2', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border-radius: 10px;
+    border-radius: 8px;
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    margin-top: 2rem;
-    transition: all 0.3s ease;
     width: 100%;
+    transition: all 0.3s ease;
 }
 
 .cta-button-futurist:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
 }
 
 .btn-glow {
@@ -698,29 +621,6 @@ nav {
     display: block;
 }
 
-/* Social Links */
-.social-links {
-    margin-top: 2rem;
-}
-
-.social-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    color: var(--text);
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.social-link:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-}
-
 /* Footer amélioré */
 .futurist-footer {
     background: rgba(10, 10, 18, 0.95);
@@ -730,14 +630,14 @@ nav {
 
 .footer-content {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
     gap: 3rem;
     margin-bottom: 2rem;
 }
 
 .footer-links {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 }
 
@@ -753,6 +653,7 @@ nav {
     text-decoration: none;
     margin-bottom: 0.5rem;
     transition: color 0.3s ease;
+    cursor: pointer;
 }
 
 .link-group a:hover {
@@ -789,7 +690,7 @@ nav {
     background: var(--dark);
     padding: 2rem;
     border-radius: 20px;
-    max-width: 600px;
+    max-width: 500px;
     width: 90%;
     max-height: 80vh;
     overflow-y: auto;
@@ -834,7 +735,7 @@ nav {
         display: none;
     }
     
-    .contact-grid {
+    .contact-simple {
         grid-template-columns: 1fr;
     }
     
@@ -848,5 +749,13 @@ nav {
     
     .hero-buttons {
         flex-direction: column;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cases-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
