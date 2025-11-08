@@ -1,5 +1,5 @@
-// Configuration simple pour site vitrine
-// Pas besoin de Formspree compliqué pour un site vitrine
+// Configuration pour site vitrine sécurisé
+// Aucun cookie - RGPD compliant
 
 // Animations au scroll
 const observerOptions = {
@@ -36,7 +36,41 @@ function animateStats() {
     });
 }
 
-// Gestion du formulaire simple (juste une confirmation)
+// Carrousel "Pour qui"
+function initCarousel() {
+    const track = document.querySelector('.carousel-track');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevBtn = document.querySelector('.carousel-prev');
+    const nextBtn = document.querySelector('.carousel-next');
+    
+    if (!track || !slides.length) return;
+    
+    let currentIndex = 0;
+    const slideCount = slides.length;
+    
+    function updateCarousel() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+    
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slideCount;
+        updateCarousel();
+    }
+    
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+        updateCarousel();
+    }
+    
+    // Événements
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+    
+    // Défilement automatique
+    setInterval(nextSlide, 5000);
+}
+
+// Gestion du formulaire simple (confirmation seulement)
 function initSimpleForm() {
     const form = document.getElementById('simpleContactForm');
     const messageDiv = document.getElementById('simpleFormMessage');
@@ -45,8 +79,16 @@ function initSimpleForm() {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            // Simulation d'envoi - dans un vrai site vitrine, on redirige vers email
-            messageDiv.textContent = '✅ Merci ! Nous vous rappellerons très rapidement.';
+            // Validation RGPD
+            const consent = document.getElementById('consent');
+            if (!consent.checked) {
+                messageDiv.textContent = '❌ Vous devez accepter la politique de confidentialité';
+                messageDiv.className = 'form-message error';
+                return;
+            }
+            
+            // Simulation d'envoi - site vitrine
+            messageDiv.textContent = '✅ Merci ! Nous vous contactons rapidement pour organiser votre démo.';
             messageDiv.className = 'form-message success';
             form.reset();
             
@@ -101,13 +143,23 @@ function initModals() {
             }
         });
     });
+    
+    // Fermer avec ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        }
+    });
 }
 
 // Redirection des boutons vers contact
 function initButtonActions() {
     // Tous ces boutons redirigent vers la section contact
     const contactButtons = [
-        '.cyber-button', // Demo gratuite nav
+        '.cyber-button', // Demo disponible nav
         '.btn-primary', // Démarrer maintenant
         '.btn-secondary' // Voir la démo
     ];
@@ -127,7 +179,7 @@ function initButtonActions() {
 // Initialisation complète
 document.addEventListener('DOMContentLoaded', () => {
     // Observer les éléments à animer
-    const animatedElements = document.querySelectorAll('.service-card, .stat-item, .case-item');
+    const animatedElements = document.querySelectorAll('.service-card, .stat-item, .profession-card');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
@@ -148,8 +200,26 @@ document.addEventListener('DOMContentLoaded', () => {
     if (statsSection) statsObserver.observe(statsSection);
     
     // Initialiser toutes les fonctionnalités
+    initCarousel();
     initSimpleForm();
     initSmoothScroll();
     initModals();
     initButtonActions();
+    
+    // Message de bienvenue dans la console (optionnel)
+    console.log('🚀 Bienvenue sur Orphika IA - Site vitrine sécurisé RGPD');
+    console.log('📧 Contact : support@orphika.io');
+    console.log('🔒 Aucun cookie utilisé - Conforme RGPD');
+});
+
+// Désactiver le clic droit pour protéger le contenu (optionnel)
+document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+});
+
+// Empêcher l'inspection (optionnel - léger)
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+        e.preventDefault();
+    }
 });
