@@ -1,5 +1,6 @@
 // Configuration Formspree - REMPLACEZ par votre vrai ID de formulaire
-const FORMSPREE_URL = 'https://formspree.io/f/YOUR_FORM_ID';
+// Allez sur https://formspree.io pour obtenir votre ID gratuit
+const FORMSPREE_URL = 'https://formspree.io/f/xjvnyyyl';
 
 // Animations au scroll
 const observerOptions = {
