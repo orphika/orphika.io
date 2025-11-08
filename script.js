@@ -1,3 +1,13 @@
+// Configuration Formspree - VOTRE ID
+const FORMSPREE_URL = 'https://formspree.io/f/mqawzbpn';
+
+// Puis continue avec votre code existant :
+// Animations au scroll
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+// ... (le reste de votre code)
 // Configuration pour site vitrine sécurisé
 // Aucun cookie - RGPD compliant
 
