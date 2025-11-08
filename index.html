@@ -15,8 +15,7 @@
     <header class="glass-header">
         <nav>
             <div class="logo-container">
-                <!-- Remplacez par votre logo généré -->
-                <img src="images/logo.png" alt="Orphika IA" class="logo">
+                <img src="logo.png" alt="Orphika IA" class="logo">
                 <div class="logo-text">
                     <span class="logo-main">ORPHIKA</span>
                     <span class="logo-sub">IA AGENCY</span>
@@ -51,7 +50,7 @@
                     <strong>Apprentissage automatique • 24/7 • Interface naturelle</strong>
                 </p>
                 <div class="hero-buttons">
-                    <button class="btn-primary">
+                    <button class="btn-primary" onclick="scrollToSection('contact')">
                         <span class="btn-icon">🚀</span>
                         DÉMARRER LA TRANSFORMATION
                     </button>
@@ -132,19 +131,85 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-futurist">
+    <!-- Technologies Section -->
+    <section id="techno" class="techno-section">
         <div class="container">
-            <div class="cta-content">
-                <h2>PRÊT POUR LE <span class="gradient-text">SAUT TECHNOLOGIQUE</span> ?</h2>
-                <p>Rejoignez la révolution IA dès aujourd'hui</p>
-                <button class="cta-button-futurist">
-                    <span class="btn-glow"></span>
-                    COMMENCER MAINTENANT
-                </button>
+            <div class="section-header">
+                <h2>TECHNOLOGIES <span class="highlight">AVANCÉES</span></h2>
+                <p>Notre stack technique pour des performances optimales</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon">🧠</div>
+                    <h3>Machine Learning</h3>
+                    <p>Modèles entraînés sur vos données spécifiques</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🔊</div>
+                    <h3>NLP Avancé</h3>
+                    <p>Compréhension du langage naturel en temps réel</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">⚡</div>
+                    <h3>Traitement Cloud</h3>
+                    <p>Infrastructure scalable et sécurisée</p>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-futurist">
+        <div class="container">
+            <div class="section-header">
+                <h2>CONTACTEZ <span class="highlight">L'AVENIR</span></h2>
+                <p>Prêt à révolutionner votre entreprise ?</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Démarrons un projet</h3>
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <span>contact@orphika.io</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🌐</span>
+                        <span>www.orphika.io</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">⏱️</span>
+                        <span>Réponse sous 24h</span>
+                    </div>
+                </div>
+                <form class="contact-form glass-card">
+                    <input type="text" placeholder="Votre nom" required>
+                    <input type="email" placeholder="Votre email" required>
+                    <input type="text" placeholder="Votre entreprise">
+                    <textarea placeholder="Décrivez votre projet..." rows="5" required></textarea>
+                    <button type="submit" class="cta-button-futurist">
+                        <span class="btn-glow"></span>
+                        ENVOYER LE MESSAGE
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="futurist-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Orphika IA" class="logo">
+                    <div class="logo-text">
+                        <span class="logo-main">ORPHIKA</span>
+                        <span class="logo-sub">IA AGENCY</span>
+                    </div>
+                </div>
+                <p>&copy; 2024 Orphika IA. Tous droits réservés.</p>
+                <p class="footer-tagline">+100.0% Reset de votre productivité</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
