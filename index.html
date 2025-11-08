@@ -3,94 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orphika - IA AGENCY | Assistants IA pour PME</title>
+    <title>Orphika IA | Assistants IA sur mesure pour PME</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+    
+    <!-- Navigation Futuriste -->
+    <header class="glass-header">
         <nav>
-            <div class="logo">
-                <!-- Remplacez par votre logo -->
-                <img src="images/logo.png" alt="Orphika IA AGENCY - +100.0% Reset" class="logo-img">
-                <span class="logo-text">Orphika</span>
+            <div class="logo-container">
+                <!-- Remplacez par votre logo généré -->
+                <img src="images/logo.png" alt="Orphika IA" class="logo">
+                <div class="logo-text">
+                    <span class="logo-main">ORPHIKA</span>
+                    <span class="logo-sub">IA AGENCY</span>
+                </div>
             </div>
             <ul class="nav-menu">
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#apropos">À propos</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#accueil" class="nav-link">ACCUEIL</a></li>
+                <li><a href="#services" class="nav-link">SERVICES</a></li>
+                <li><a href="#techno" class="nav-link">TECHNOLOGIES</a></li>
+                <li><a href="#contact" class="nav-link">CONTACT</a></li>
             </ul>
+            <div class="nav-cta">
+                <button class="cyber-button">DEMO GRATUITE</button>
+            </div>
         </nav>
     </header>
 
-    <section id="accueil" class="hero">
-        <div class="hero-content">
-            <h1>+100% de Productivité avec nos Assistants IA</h1>
-            <p>Orphika réinitialise votre façon de travailler grâce à l'intelligence artificielle sur mesure pour les petites entreprises</p>
-            <button class="cta-button">Démarrer ma transformation</button>
+    <!-- Hero Section Futuriste -->
+    <section id="accueil" class="hero-futurist">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <div class="badge-futurist">
+                    <span class="pulse-dot"></span>
+                    NOUVELLE GÉNÉRATION IA
+                </div>
+                <h1 class="hero-title">
+                    <span class="gradient-text">+100.0% RESET</span>
+                    <span class="hero-subtitle">DE VOTRE PRODUCTIVITÉ</span>
+                </h1>
+                <p class="hero-description">
+                    Des assistants IA sur mesure qui s'adaptent à votre entreprise. 
+                    <strong>Apprentissage automatique • 24/7 • Interface naturelle</strong>
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-primary">
+                        <span class="btn-icon">🚀</span>
+                        DÉMARRER LA TRANSFORMATION
+                    </button>
+                    <button class="btn-secondary">
+                        <span class="btn-icon">▶</span>
+                        VISIONNER LA DÉMO
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="ai-orb">
+                    <div class="orb-core"></div>
+                    <div class="orb-ring"></div>
+                    <div class="orb-particle"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-number" data-count="100">0</div>
+                <div class="stat-label">Clients Satisfaits</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="24">0</div>
+                <div class="stat-label">Assistants Actifs</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="1000">0</div>
+                <div class="stat-label">Heures Sauvées</div>
+            </div>
         </div>
     </section>
 
-    <section id="services" class="services">
+    <!-- Services Section -->
+    <section id="services" class="services-futurist">
         <div class="container">
-            <h2>Nos Services IA</h2>
+            <div class="section-header">
+                <h2>SOLUTIONS IA <span class="highlight">SUR MESURE</span></h2>
+                <p>Des assistants intelligents adaptés à chaque métier</p>
+            </div>
+            
             <div class="services-grid">
-                <div class="service-card">
-                    <h3>🤖 Assistant Client</h3>
-                    <p>Chatbots intelligents disponibles 24/7 pour votre service client</p>
+                <div class="service-card glass-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>Assistant Client Intelligent</h3>
+                    <p>Chatbots IA qui comprennent le contexte et résolvent les problèmes en temps réel</p>
+                    <ul class="feature-list">
+                        <li>Réponses contextuelles</li>
+                        <li>Support 24/7</li>
+                        <li>Intégration multi-canal</li>
+                    </ul>
                 </div>
-                <div class="service-card">
-                    <h3>⚡ Automatisation</h3>
-                    <p>Automatisez vos processus métier répétitifs</p>
+                
+                <div class="service-card glass-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Automatisation Avancée</h3>
+                    <p>Automatisez vos processus métiers avec l'IA</p>
+                    <ul class="feature-list">
+                        <li>Traitement de documents</li>
+                        <li>Workflows intelligents</li>
+                        <li>Analyses prédictives</li>
+                    </ul>
                 </div>
-                <div class="service-card">
-                    <h3>📊 Analyse de Données</h3>
-                    <p>Solutions d'IA pour l'analyse commerciale en temps réel</p>
+                
+                <div class="service-card glass-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Analytics en Temps Réel</h3>
+                    <p>Décisions éclairées par l'analyse de données avancée</p>
+                    <ul class="feature-list">
+                        <li>Dashboards interactifs</li>
+                        <li>Alertes intelligentes</li>
+                        <li>Recommandations actionnables</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="apropos" class="about">
+    <!-- CTA Section -->
+    <section class="cta-futurist">
         <div class="container">
-            <h2>Pourquoi Orphika ?</h2>
-            <p>Nous créons des assistants IA sur mesure pour les petites entreprises qui veulent rester compétitives sans se ruiner.</p>
-            <div class="stats">
-                <div class="stat">
-                    <span class="number">+100%</span>
-                    <span class="label">Productivité</span>
-                </div>
-                <div class="stat">
-                    <span class="number">24/7</span>
-                    <span class="label">Disponibilité</span>
-                </div>
-                <div class="stat">
-                    <span class="number">0€</span>
-                    <span class="label">Investissement initial</span>
-                </div>
+            <div class="cta-content">
+                <h2>PRÊT POUR LE <span class="gradient-text">SAUT TECHNOLOGIQUE</span> ?</h2>
+                <p>Rejoignez la révolution IA dès aujourd'hui</p>
+                <button class="cta-button-futurist">
+                    <span class="btn-glow"></span>
+                    COMMENCER MAINTENANT
+                </button>
             </div>
         </div>
     </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contactez-nous</h2>
-            <p>Prêt à révolutionner votre entreprise avec l'IA ?</p>
-            <form class="contact-form">
-                <input type="text" placeholder="Votre nom" required>
-                <input type="email" placeholder="Votre email" required>
-                <textarea placeholder="Votre message" rows="5" required></textarea>
-                <button type="submit">Envoyer le message</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Orphika - IA Agency. Tous droits réservés.</p>
-            <p>contact@orphika.io</p>
-        </div>
-    </footer>
 
     <script src="script.js"></script>
 </body>
