@@ -5,8 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orphika IA | Votre Réceptionniste Virtuel 24/7 - Ne Ratez Plus Aucun Client</title>
     <meta name="description" content="Assistant IA qui répond à vos clients pendant que vous travaillez. Prise de RDV automatique, réponses instantanées, disponible 24h/24. Démo gratuite.">
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- Optimisation SEO et Réseaux Sociaux -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Orphika IA Agency">
+    <link rel="canonical" href="https://orphika.io">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Orphika IA | Votre Réceptionniste Virtuel 24/7">
+    <meta property="og:description" content="Assistant IA qui répond à vos clients pendant que vous travaillez. Prise de RDV automatique, disponible 24h/24.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://orphika.io">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Orphika IA | Réceptionniste Virtuel 24/7">
+    <meta name="twitter:description" content="Ne ratez plus aucun client avec notre assistant IA.">
+    
+    <!-- Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    
+    <link rel="stylesheet" href="style.css">
     <!-- Aucun cookie n'est utilisé sur ce site -->
 </head>
 <body>
@@ -37,7 +60,7 @@
     <header class="glass-header">
         <nav>
             <div class="logo-container">
-                <img src="logo.png" alt="Orphika IA - Assistant Client Intelligent" class="logo">
+                <img src="logo.png" alt="Orphika IA - Assistant Client Intelligent" class="logo" loading="lazy">
                 <div class="logo-text">
                     <span class="logo-main">ORPHIKA</span>
                     <span class="logo-sub">IA AGENCY</span>
@@ -50,7 +73,7 @@
                 <li><a href="#tarifs" class="nav-link">Tarifs</a></li>
             </ul>
             <div class="nav-cta">
-                <button class="cta-button-nav">
+                <button class="cta-button-nav" onclick="scrollToContact()">
                     <span class="cta-icon">🎁</span>
                     DÉMO GRATUITE
                 </button>
@@ -58,710 +81,712 @@
         </nav>
     </header>
 
-    <!-- Hero Section - Neuromarketing Optimisé -->
-    <section id="accueil" class="hero-optimized">
-        <div class="hero-container">
-            <div class="hero-content">
-                <!-- Badge urgence -->
-                <div class="badge-urgency">
-                    <span class="pulse-dot-orange"></span>
-                    OFFRE SPÉCIALE ARTISANS & TPE • PLACES LIMITÉES
+    <main>
+        <!-- Hero Section - Neuromarketing Optimisé -->
+        <section id="accueil" class="hero-optimized" role="banner">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <!-- Badge urgence -->
+                    <div class="badge-urgency">
+                        <span class="pulse-dot-orange"></span>
+                        OFFRE SPÉCIALE ARTISANS & TPE • PLACES LIMITÉES
+                    </div>
+                    
+                    <!-- Headline émotionnel -->
+                    <h1 class="hero-title">
+                        <span class="title-problem">Vous perdez des clients</span>
+                        <span class="title-main">parce que vous ne répondez pas assez vite ?</span>
+                    </h1>
+                    
+                    <!-- Sous-titre bénéfice -->
+                    <p class="hero-subtitle">
+                        <strong>Votre assistant IA répond à votre place 24h/24</strong> : prend les appels, 
+                        gère les rendez-vous, répond aux questions... même pendant que vous êtes sur un chantier.
+                    </p>
+                    
+                    <!-- Bénéfices visibles -->
+                    <div class="hero-benefits">
+                        <div class="benefit-item">
+                            <span class="benefit-icon">📞</span>
+                            <span><strong>Zéro appel manqué</strong></span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">⏰</span>
+                            <span><strong>Disponible 24/7</strong></span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">💰</span>
+                            <span><strong>10x moins cher qu'un employé</strong></span>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA Principal -->
+                    <div class="hero-cta">
+                        <button class="cta-primary" onclick="scrollToContact()">
+                            <span class="cta-text">
+                                <strong>VOIR LA DÉMO GRATUITE</strong>
+                                <small>Sans engagement • Rdv en 24h</small>
+                            </span>
+                            <span class="cta-arrow">→</span>
+                        </button>
+                        <button class="cta-secondary" onclick="scrollToContact()">
+                            <span class="cta-icon">💬</span>
+                            Parler à un conseiller
+                        </button>
+                    </div>
+                    
+                    <!-- Social Proof -->
+                    <div class="social-proof">
+                        <div class="proof-avatars">
+                            <div class="avatar">JM</div>
+                            <div class="avatar">SL</div>
+                            <div class="avatar">PD</div>
+                            <span class="proof-text">+15 artisans nous font confiance</span>
+                        </div>
+                    </div>
                 </div>
                 
-                <!-- Headline émotionnel -->
-                <h1 class="hero-title">
-                    <span class="title-problem">Vous perdez des clients</span>
-                    <span class="title-main">parce que vous ne répondez pas assez vite ?</span>
-                </h1>
-                
-                <!-- Sous-titre bénéfice -->
-                <p class="hero-subtitle">
-                    <strong>Votre assistant IA répond à votre place 24h/24</strong> : prend les appels, 
-                    gère les rendez-vous, répond aux questions... même pendant que vous êtes sur un chantier.
-                </p>
-                
-                <!-- Bénéfices visibles -->
-                <div class="hero-benefits">
-                    <div class="benefit-item">
-                        <span class="benefit-icon">📞</span>
-                        <span><strong>Zéro appel manqué</strong></span>
+                <!-- Visual Optimisé -->
+                <div class="hero-visual">
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="chat-bubble bot">
+                                Bonjour ! Je suis l'assistant de Plomberie Martin. Comment puis-je vous aider ?
+                            </div>
+                            <div class="chat-bubble user">
+                                J'ai une fuite d'eau urgente
+                            </div>
+                            <div class="chat-bubble bot">
+                                Je comprends, c'est urgent. Je peux vous proposer un créneau aujourd'hui à 14h30 ou 17h. Lequel vous convient ?
+                            </div>
+                            <div class="typing-indicator">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="benefit-item">
-                        <span class="benefit-icon">⏰</span>
-                        <span><strong>Disponible 24/7</strong></span>
+                    
+                    <!-- Badges flottants -->
+                    <div class="floating-badge badge-1">
+                        <div class="badge-number">24/7</div>
+                        <div class="badge-label">Disponible</div>
                     </div>
-                    <div class="benefit-item">
-                        <span class="benefit-icon">💰</span>
-                        <span><strong>10x moins cher qu'un employé</strong></span>
+                    <div class="floating-badge badge-2">
+                        <div class="badge-number">< 10s</div>
+                        <div class="badge-label">Temps réponse</div>
+                    </div>
+                    <div class="floating-badge badge-3">
+                        <div class="badge-number">+40%</div>
+                        <div class="badge-label">RDV pris</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comment ça marche - Parcours Client -->
+        <section id="solution" class="how-it-works" role="region" aria-labelledby="how-it-works-title">
+            <div class="container">
+                <h2 id="how-it-works-title" class="section-title-center">
+                    Comment ça marche ?
+                </h2>
+                <p class="section-subtitle">De la première prise de contact à l'assistant IA opérationnel</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-number">1</div>
+                        <div class="timeline-content">
+                            <h3>📞 Vous nous contactez</h3>
+                            <p>Formulaire, email ou WhatsApp. Nous répondons en moins de 24h pour comprendre vos besoins.</p>
+                            <span class="timeline-duration">Jour 1</span>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-number">2</div>
+                        <div class="timeline-content">
+                            <h3>🎥 Démo personnalisée gratuite</h3>
+                            <p>Appel de 30 minutes : on vous montre exactement comment l'assistant IA fonctionnera pour VOTRE métier.</p>
+                            <span class="timeline-duration">Jour 1-2</span>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-number">3</div>
+                        <div class="timeline-content">
+                            <h3>📋 Devis sur mesure</h3>
+                            <p>Nous préparons une offre adaptée à votre activité (canaux, fonctionnalités, budget).</p>
+                            <span class="timeline-duration">Jour 2-3</span>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-number">4</div>
+                        <div class="timeline-content">
+                            <h3>✍️ Signature du contrat</h3>
+                            <p>Vous validez, on signe. Paiement sécurisé en euros. Aucun engagement de durée.</p>
+                            <span class="timeline-duration">Jour 3-4</span>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-number">5</div>
+                        <div class="timeline-content">
+                            <h3>⚙️ Notre équipe développe votre assistant</h3>
+                            <p><strong>Tout est géré par notre équipe :</strong> conception, développement, intégration, tests. Vous n'avez rien à faire.</p>
+                            <span class="timeline-duration">Jour 4-6</span>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-number">6</div>
+                        <div class="timeline-content">
+                            <h3>🎓 Formation et mise en service</h3>
+                            <p>On vous forme en 1h à l'utilisation. Puis on active l'assistant sur vos canaux (WhatsApp, site, tel...).</p>
+                            <span class="timeline-duration">Jour 7</span>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item highlight">
+                        <div class="timeline-number">🚀</div>
+                        <div class="timeline-content">
+                            <h3>✅ Votre assistant IA est opérationnel 24/7</h3>
+                            <p>Il répond à vos clients pendant que vous travaillez. Support et maintenance continus assurés par notre équipe.</p>
+                            <span class="timeline-duration">À partir du jour 7</span>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- CTA Principal -->
-                <div class="hero-cta">
-                    <button class="cta-primary">
+                <div class="cta-how-it-works">
+                    <button class="cta-primary" onclick="scrollToContact()">
                         <span class="cta-text">
-                            <strong>VOIR LA DÉMO GRATUITE</strong>
-                            <small>Sans engagement • Rdv en 24h</small>
+                            <strong>COMMENCER MAINTENANT</strong>
+                            <small>Démo gratuite en 24h</small>
                         </span>
                         <span class="cta-arrow">→</span>
                     </button>
-                    <button class="cta-secondary">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Problème/Solution -->
+        <section id="probleme" class="problem-solution" role="region" aria-labelledby="problem-solution-title">
+            <div class="container">
+                <!-- Problème -->
+                <div class="problem-block">
+                    <h2 id="problem-solution-title" class="section-title-problem">
+                        <span class="title-icon">⚠️</span>
+                        Ça vous dit quelque chose ?
+                    </h2>
+                    <div class="problem-grid">
+                        <div class="problem-card">
+                            <div class="problem-icon">📱</div>
+                            <p>"Mon téléphone sonne toute la journée pendant que je travaille"</p>
+                        </div>
+                        <div class="problem-card">
+                            <div class="problem-icon">😤</div>
+                            <p>"Les clients rappellent mes concurrents quand je ne décroche pas"</p>
+                        </div>
+                        <div class="problem-card">
+                            <div class="problem-icon">⏰</div>
+                            <p>"Le soir et le week-end, je perds des opportunités"</p>
+                        </div>
+                        <div class="problem-card">
+                            <div class="problem-icon">🔁</div>
+                            <p>"Je réponds 10 fois par jour aux mêmes questions"</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Solution -->
+                <div class="solution-block">
+                    <h2 class="section-title-solution">
+                        <span class="title-icon">✨</span>
+                        Votre Assistant IA fait tout ça pour vous
+                    </h2>
+                    <div class="solution-grid">
+                        <div class="solution-card">
+                            <div class="solution-number">1</div>
+                            <h3>Répond instantanément</h3>
+                            <p>Dès qu'un client vous contacte (appel, SMS, WhatsApp, site web), l'IA répond en <strong>moins de 10 secondes</strong></p>
+                        </div>
+                        <div class="solution-card">
+                            <div class="solution-number">2</div>
+                            <h3>Prend les rendez-vous</h3>
+                            <p>L'assistant accède à votre agenda et <strong>propose des créneaux disponibles</strong> automatiquement</p>
+                        </div>
+                        <div class="solution-card">
+                            <div class="solution-number">3</div>
+                            <h3>Répond aux questions</h3>
+                            <p>Tarifs, horaires, services, disponibilités... <strong>L'IA connaît votre entreprise</strong> par cœur</p>
+                        </div>
+                        <div class="solution-card">
+                            <div class="solution-number">4</div>
+                            <h3>Vous alerte si urgent</h3>
+                            <p>En cas de vraie urgence, <strong>vous recevez une notification</strong> pour intervenir directement</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparaison Avant/Après - Carrousel -->
+        <section class="before-after" role="region" aria-labelledby="comparison-title">
+            <div class="container">
+                <h2 id="comparison-title" class="section-title-center">
+                    L'impact sur votre entreprise
+                </h2>
+                
+                <div class="comparison-carousel" aria-label="Comparaison avant/après Orphika">
+                    <div class="comparison-track">
+                        <!-- Slide 1 : Sans Orphika -->
+                        <div class="comparison-slide">
+                            <div class="comparison-card negative">
+                                <h3>❌ Sans Orphika</h3>
+                                <div class="comparison-icon">😰</div>
+                                <ul>
+                                    <li>5-10 appels manqués par jour</li>
+                                    <li>Clients qui vont chez la concurrence</li>
+                                    <li>Temps perdu à répondre aux mêmes questions</li>
+                                    <li>Pas de disponibilité soir/week-end</li>
+                                    <li>Stress de devoir tout gérer seul</li>
+                                </ul>
+                                <div class="comparison-result negative">
+                                    <strong>Perte estimée : 500-2000€/mois</strong>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 2 : Avec Orphika -->
+                        <div class="comparison-slide">
+                            <div class="comparison-card positive">
+                                <h3>✅ Avec Orphika</h3>
+                                <div class="comparison-icon">🎉</div>
+                                <ul>
+                                    <li>100% des demandes traitées</li>
+                                    <li>Clients pris en charge immédiatement</li>
+                                    <li>Automatisation des réponses répétitives</li>
+                                    <li>Service 24h/24 et 7j/7</li>
+                                    <li>Vous vous concentrez sur votre métier</li>
+                                </ul>
+                                <div class="comparison-result positive">
+                                    <strong>Gain estimé : +25% de CA</strong>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 3 : Employé (comparaison) -->
+                        <div class="comparison-slide">
+                            <div class="comparison-card neutral">
+                                <h3>💼 Avec un employé</h3>
+                                <div class="comparison-icon">🤷</div>
+                                <ul>
+                                    <li>Coût : 1500-2000€/mois</li>
+                                    <li>+ Charges sociales</li>
+                                    <li>+ Congés payés</li>
+                                    <li>Disponibilité limitée (8h/jour)</li>
+                                    <li>Peut tomber malade</li>
+                                </ul>
+                                <div class="comparison-result neutral">
+                                    <strong>Budget : 1500-2000€/mois</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contrôles carrousel -->
+                    <button class="carousel-control prev" onclick="moveComparison(-1)" aria-label="Slide précédent">‹</button>
+                    <button class="carousel-control next" onclick="moveComparison(1)" aria-label="Slide suivant">›</button>
+                    
+                    <!-- Indicateurs -->
+                    <div class="carousel-indicators">
+                        <span class="indicator active" onclick="goToComparison(0)" aria-label="Afficher slide 1"></span>
+                        <span class="indicator" onclick="goToComparison(1)" aria-label="Afficher slide 2"></span>
+                        <span class="indicator" onclick="goToComparison(2)" aria-label="Afficher slide 3"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pour Qui - Témoignages Carrousel -->
+        <section id="pourqui" class="pourqui-optimized" role="region" aria-labelledby="testimonials-title">
+            <div class="container">
+                <h2 id="testimonials-title" class="section-title-center">
+                    Ils ont déjà franchi le pas
+                </h2>
+                <p class="section-subtitle">Des professionnels comme vous qui ont automatisé leur relation client</p>
+                
+                <div class="testimonials-carousel" aria-label="Témoignages clients">
+                    <div class="testimonials-track">
+                        <!-- Témoignage 1 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-header">
+                                    <div class="avatar-large">JM</div>
+                                    <div class="testimonial-meta">
+                                        <strong>Jean-Marc D.</strong>
+                                        <span>Plombier • Lyon</span>
+                                    </div>
+                                </div>
+                                <p class="testimonial-text">
+                                    "Avant, je manquais 7-8 appels par jour parce que j'étais sur les chantiers. 
+                                    Maintenant, mon assistant IA répond, prend les RDV et me prévient pour les urgences. 
+                                    <strong>J'ai gagné 3 nouveaux clients dès le premier mois.</strong>"
+                                </p>
+                                <div class="testimonial-result">
+                                    <div class="result-badge">+3 clients/mois</div>
+                                    <div class="result-badge">+1200€ CA/mois</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Témoignage 2 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-header">
+                                    <div class="avatar-large">SL</div>
+                                    <div class="testimonial-meta">
+                                        <strong>Sophie L.</strong>
+                                        <span>Coiffeuse • Bruxelles</span>
+                                    </div>
+                                </div>
+                                <p class="testimonial-text">
+                                    "Mes clientes réservent via WhatsApp 24h/24. Fini les allers-retours par SMS ! 
+                                    L'IA gère tout : rendez-vous, rappels, annulations. 
+                                    <strong>Mon salon ne désemplit plus.</strong>"
+                                </p>
+                                <div class="testimonial-result">
+                                    <div class="result-badge">Agenda plein</div>
+                                    <div class="result-badge">-70% admin</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Témoignage 3 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-header">
+                                    <div class="avatar-large">PD</div>
+                                    <div class="testimonial-meta">
+                                        <strong>Pierre D.</strong>
+                                        <span>Garage auto • Marseille</span>
+                                    </div>
+                                </div>
+                                <p class="testimonial-text">
+                                    "Les clients demandent les tarifs, les disponibilités, prennent RDV... 
+                                    tout se fait automatiquement. Je me concentre sur la mécanique. 
+                                    <strong>Productivité x2 !</strong>"
+                                </p>
+                                <div class="testimonial-result">
+                                    <div class="result-badge">x2 productivité</div>
+                                    <div class="result-badge">5★ avis Google</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contrôles -->
+                    <button class="carousel-control prev" onclick="moveTestimonial(-1)" aria-label="Témoignage précédent">‹</button>
+                    <button class="carousel-control next" onclick="moveTestimonial(1)" aria-label="Témoignage suivant">›</button>
+                    
+                    <!-- Indicateurs -->
+                    <div class="carousel-indicators">
+                        <span class="indicator active" onclick="goToTestimonial(0)" aria-label="Afficher témoignage 1"></span>
+                        <span class="indicator" onclick="goToTestimonial(1)" aria-label="Afficher témoignage 2"></span>
+                        <span class="indicator" onclick="goToTestimonial(2)" aria-label="Afficher témoignage 3"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tarifs avec Ancrage Prix -->
+        <section id="tarifs" class="pricing-section" role="region" aria-labelledby="pricing-title">
+            <div class="container">
+                <h2 id="pricing-title" class="section-title-center">
+                    Combien ça coûte vraiment ?
+                </h2>
+                <p class="section-subtitle">Comparé au coût d'un employé ou d'appels manqués</p>
+                
+                <!-- Comparaison prix -->
+                <div class="price-comparison">
+                    <div class="price-card expensive">
+                        <div class="price-label">❌ Employé mi-temps</div>
+                        <div class="price-amount striked">1500-2000€<span>/mois</span></div>
+                        <ul>
+                            <li>+ Charges sociales</li>
+                            <li>+ Congés payés</li>
+                            <li>+ Formation</li>
+                            <li>Disponibilité limitée</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="price-card best">
+                        <div class="price-badge">MEILLEUR CHOIX</div>
+                        <div class="price-label">✅ Assistant IA Orphika</div>
+                        <div class="price-amount highlighted">
+                            150-400€<span>/mois</span>
+                        </div>
+                        <ul>
+                            <li>✓ Disponible 24/7/365</li>
+                            <li>✓ Pas de congés</li>
+                            <li>✓ Pas de charges</li>
+                            <li>✓ Répond instantanément</li>
+                            <li>✓ Ne tombe jamais malade</li>
+                        </ul>
+                        <div class="savings-badge">
+                            💰 Économie : <strong>1200-1600€/mois</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="price-card expensive">
+                        <div class="price-label">❌ Appels manqués</div>
+                        <div class="price-amount striked">500-2000€<span>/mois</span></div>
+                        <ul>
+                            <li>Clients perdus</li>
+                            <li>Opportunités ratées</li>
+                            <li>Mauvaise réputation</li>
+                            <li>Concurrence gagnée</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Forfaits détaillés -->
+                <div class="packages-grid">
+                    <div class="package-card">
+                        <h3>ESSENTIEL</h3>
+                        <div class="package-price">
+                            <span class="setup">À partir de 1000€</span>
+                            <span class="label">Installation</span>
+                        </div>
+                        <div class="package-price">
+                            <span class="monthly">150-250€/mois</span>
+                            <span class="label">Maintenance</span>
+                        </div>
+                        <ul class="package-features">
+                            <li>✓ Assistant WhatsApp ou site web</li>
+                            <li>✓ Réponses FAQ automatiques</li>
+                            <li>✓ Prise de RDV simple</li>
+                            <li>✓ Support par email</li>
+                            <li>✓ Tout géré par notre équipe</li>
+                        </ul>
+                        <button class="cta-package" onclick="scrollToContact()">Demander un devis</button>
+                    </div>
+                    
+                    <div class="package-card popular">
+                        <div class="popular-badge">⭐ CHOIX N°1</div>
+                        <h3>PROFESSIONNEL</h3>
+                        <div class="package-price">
+                            <span class="setup">À partir de 1500€</span>
+                            <span class="label">Installation</span>
+                        </div>
+                        <div class="package-price">
+                            <span class="monthly">300-500€/mois</span>
+                            <span class="label">Maintenance</span>
+                        </div>
+                        <ul class="package-features">
+                            <li>✓ Multi-canal (WhatsApp + Web + Téléphone)</li>
+                            <li>✓ Intégration agenda Google/Outlook</li>
+                            <li>✓ Gestion urgences avec alertes</li>
+                            <li>✓ Génération devis automatique</li>
+                            <li>✓ Support prioritaire</li>
+                            <li>✓ <strong>Tout géré par notre équipe</strong></li>
+                        </ul>
+                        <button class="cta-package primary" onclick="scrollToContact()">Demander un devis</button>
+                    </div>
+                    
+                    <div class="package-card">
+                        <h3>PREMIUM</h3>
+                        <div class="package-price">
+                            <span class="setup">À partir de 3000€</span>
+                            <span class="label">Installation</span>
+                        </div>
+                        <div class="package-price">
+                            <span class="monthly">500-700€/mois</span>
+                            <span class="label">Maintenance</span>
+                        </div>
+                        <ul class="package-features">
+                            <li>✓ Tout PROFESSIONNEL</li>
+                            <li>✓ Intégration CRM</li>
+                            <li>✓ Assistant vocal avancé</li>
+                            <li>✓ Reporting détaillé</li>
+                            <li>✓ Support téléphonique dédié</li>
+                            <li>✓ <strong>Tout géré par notre équipe</strong></li>
+                        </ul>
+                        <button class="cta-package" onclick="scrollToContact()">Demander un devis</button>
+                    </div>
+                </div>
+                
+                <div class="pricing-guarantee">
+                    <p><strong>🎁 OFFRE SPÉCIALE :</strong> Démo gratuite + 1er mois maintenance offert si vous signez avant fin du mois</p>
+                    <p><small>✓ Sans engagement • ✓ Remboursement si non-conforme • ✓ Support inclus</small></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Accordéon -->
+        <section class="faq-section" role="region" aria-labelledby="faq-title">
+            <div class="container">
+                <h2 id="faq-title" class="section-title-center">Questions fréquentes</h2>
+                <p class="section-subtitle">Tout ce que vous devez savoir avant de démarrer</p>
+                
+                <div class="faq-accordion" role="tablist" aria-label="Questions fréquentes">
+                    <div class="faq-accordion-item">
+                        <button class="faq-question" role="tab" aria-expanded="false" aria-controls="faq1" onclick="toggleFAQ(this)">
+                            <span class="faq-icon">⏱️</span>
+                            <span class="faq-text">Ça prend combien de temps à installer ?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer" role="tabpanel" id="faq1">
+                            <p><strong>5 à 7 jours</strong> de la signature à la mise en service. Notre équipe s'occupe de tout : développement, intégration, tests, formation. Vous n'avez rien à faire techniquement.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-accordion-item">
+                        <button class="faq-question" role="tab" aria-expanded="false" aria-controls="faq2" onclick="toggleFAQ(this)">
+                            <span class="faq-icon">🤖</span>
+                            <span class="faq-text">C'est compliqué à utiliser ?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer" role="tabpanel" id="faq2">
+                            <p><strong>Non, zéro compétence technique requise.</strong> On vous forme en 1h et vous pouvez modifier les réponses vous-même via une interface simple. Si vous savez envoyer un email, vous savez utiliser votre assistant IA.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-accordion-item">
+                        <button class="faq-question" role="tab" aria-expanded="false" aria-controls="faq3" onclick="toggleFAQ(this)">
+                            <span class="faq-icon">📱</span>
+                            <span class="faq-text">Ça marche sur quels canaux ?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer" role="tabpanel" id="faq3">
+                            <p><strong>Tous les canaux que vous utilisez déjà :</strong> WhatsApp Business, site web (chatbot), téléphone (assistant vocal), Facebook Messenger, Instagram, email. Vous choisissez selon vos besoins et votre budget.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-accordion-item">
+                        <button class="faq-question" role="tab" aria-expanded="false" aria-controls="faq4" onclick="toggleFAQ(this)">
+                            <span class="faq-icon">💰</span>
+                            <span class="faq-text">Et si je veux arrêter ?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer" role="tabpanel" id="faq4">
+                            <p><strong>Aucun engagement de durée.</strong> Vous pouvez résilier avec un préavis de 30 jours. Remboursement si l'assistant n'est pas conforme à ce qui était promis dans le devis.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-accordion-item">
+                        <button class="faq-question" role="tab" aria-expanded="false" aria-controls="faq5" onclick="toggleFAQ(this)">
+                            <span class="faq-icon">🔒</span>
+                            <span class="faq-text">Mes données clients sont sécurisées ?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer" role="tabpanel" id="faq5">
+                            <p><strong>Oui, 100% conforme RGPD.</strong> Vos données et celles de vos clients sont hébergées en Europe, chiffrées et protégées. Nous ne les partageons jamais avec des tiers. Vous restez propriétaire de toutes vos données.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-accordion-item">
+                        <button class="faq-question" role="tab" aria-expanded="false" aria-controls="faq6" onclick="toggleFAQ(this)">
+                            <span class="faq-icon">🛠️</span>
+                            <span class="faq-text">Que comprend la maintenance mensuelle ?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer" role="tabpanel" id="faq6">
+                            <p><strong>Tout est inclus :</strong> surveillance 24/7, corrections de bugs, mises à jour de sécurité, ajout de nouvelles réponses (jusqu'à 20/mois), optimisation continue, support technique prioritaire, statistiques mensuelles détaillées.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-accordion-item">
+                        <button class="faq-question" role="tab" aria-expanded="false" aria-controls="faq7" onclick="toggleFAQ(this)">
+                            <span class="faq-icon">🌍</span>
+                            <span class="faq-text">Vous êtes basés en Algérie, c'est un problème ?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer" role="tabpanel" id="faq7">
+                            <p><strong>Non, au contraire !</strong> Nous travaillons aux heures françaises (même fuseau horaire UTC+1). Nos clients sont en Europe francophone. Paiement sécurisé en euros via Wise. Et nos tarifs sont 30-40% plus compétitifs grâce à nos coûts optimisés.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-accordion-item">
+                        <button class="faq-question" role="tab" aria-expanded="false" aria-controls="faq8" onclick="toggleFAQ(this)">
+                            <span class="faq-icon">💬</span>
+                            <span class="faq-text">L'assistant comprend vraiment le français ?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer" role="tabpanel" id="faq8">
+                            <p><strong>Oui, parfaitement.</strong> L'IA est entraînée spécifiquement en français et comprend le langage naturel, les expressions courantes et même l'argot. Elle s'adapte au ton de votre métier (formel pour avocat, convivial pour restaurant...).</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-cta">
+                    <p><strong>Vous avez d'autres questions ?</strong></p>
+                    <button class="cta-secondary" onclick="scrollToContact()">
                         <span class="cta-icon">💬</span>
-                        Parler à un conseiller
+                        Parlons-en par WhatsApp
                     </button>
                 </div>
-                
-                <!-- Social Proof -->
-                <div class="social-proof">
-                    <div class="proof-avatars">
-                        <div class="avatar">JM</div>
-                        <div class="avatar">SL</div>
-                        <div class="avatar">PD</div>
-                        <span class="proof-text">+15 artisans nous font confiance</span>
-                    </div>
-                </div>
             </div>
-            
-            <!-- Visual Optimisé -->
-            <div class="hero-visual">
-                <div class="phone-mockup">
-                    <div class="phone-screen">
-                        <div class="chat-bubble bot">
-                            Bonjour ! Je suis l'assistant de Plomberie Martin. Comment puis-je vous aider ?
-                        </div>
-                        <div class="chat-bubble user">
-                            J'ai une fuite d'eau urgente
-                        </div>
-                        <div class="chat-bubble bot">
-                            Je comprends, c'est urgent. Je peux vous proposer un créneau aujourd'hui à 14h30 ou 17h. Lequel vous convient ?
-                        </div>
-                        <div class="typing-indicator">
-                            <span></span><span></span><span></span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Badges flottants -->
-                <div class="floating-badge badge-1">
-                    <div class="badge-number">24/7</div>
-                    <div class="badge-label">Disponible</div>
-                </div>
-                <div class="floating-badge badge-2">
-                    <div class="badge-number">< 10s</div>
-                    <div class="badge-label">Temps réponse</div>
-                </div>
-                <div class="floating-badge badge-3">
-                    <div class="badge-number">+40%</div>
-                    <div class="badge-label">RDV pris</div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Comment ça marche - Parcours Client -->
-    <section id="solution" class="how-it-works">
-        <div class="container">
-            <h2 class="section-title-center">
-                Comment ça marche ?
-            </h2>
-            <p class="section-subtitle">De la première prise de contact à l'assistant IA opérationnel</p>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-number">1</div>
-                    <div class="timeline-content">
-                        <h3>📞 Vous nous contactez</h3>
-                        <p>Formulaire, email ou WhatsApp. Nous répondons en moins de 24h pour comprendre vos besoins.</p>
-                        <span class="timeline-duration">Jour 1</span>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-number">2</div>
-                    <div class="timeline-content">
-                        <h3>🎥 Démo personnalisée gratuite</h3>
-                        <p>Appel de 30 minutes : on vous montre exactement comment l'assistant IA fonctionnera pour VOTRE métier.</p>
-                        <span class="timeline-duration">Jour 1-2</span>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-number">3</div>
-                    <div class="timeline-content">
-                        <h3>📋 Devis sur mesure</h3>
-                        <p>Nous préparons une offre adaptée à votre activité (canaux, fonctionnalités, budget).</p>
-                        <span class="timeline-duration">Jour 2-3</span>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-number">4</div>
-                    <div class="timeline-content">
-                        <h3>✍️ Signature du contrat</h3>
-                        <p>Vous validez, on signe. Paiement sécurisé en euros. Aucun engagement de durée.</p>
-                        <span class="timeline-duration">Jour 3-4</span>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-number">5</div>
-                    <div class="timeline-content">
-                        <h3>⚙️ Notre équipe développe votre assistant</h3>
-                        <p><strong>Tout est géré par notre équipe :</strong> conception, développement, intégration, tests. Vous n'avez rien à faire.</p>
-                        <span class="timeline-duration">Jour 4-6</span>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-number">6</div>
-                    <div class="timeline-content">
-                        <h3>🎓 Formation et mise en service</h3>
-                        <p>On vous forme en 1h à l'utilisation. Puis on active l'assistant sur vos canaux (WhatsApp, site, tel...).</p>
-                        <span class="timeline-duration">Jour 7</span>
-                    </div>
-                </div>
-                
-                <div class="timeline-item highlight">
-                    <div class="timeline-number">🚀</div>
-                    <div class="timeline-content">
-                        <h3>✅ Votre assistant IA est opérationnel 24/7</h3>
-                        <p>Il répond à vos clients pendant que vous travaillez. Support et maintenance continus assurés par notre équipe.</p>
-                        <span class="timeline-duration">À partir du jour 7</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="cta-how-it-works">
-                <button class="cta-primary">
-                    <span class="cta-text">
-                        <strong>COMMENCER MAINTENANT</strong>
-                        <small>Démo gratuite en 24h</small>
-                    </span>
-                    <span class="cta-arrow">→</span>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Problème/Solution -->
-    <section id="probleme" class="problem-solution">
-        <div class="container">
-            <!-- Problème -->
-            <div class="problem-block">
-                <h2 class="section-title-problem">
-                    <span class="title-icon">⚠️</span>
-                    Ça vous dit quelque chose ?
-                </h2>
-                <div class="problem-grid">
-                    <div class="problem-card">
-                        <div class="problem-icon">📱</div>
-                        <p>"Mon téléphone sonne toute la journée pendant que je travaille"</p>
-                    </div>
-                    <div class="problem-card">
-                        <div class="problem-icon">😤</div>
-                        <p>"Les clients rappellent mes concurrents quand je ne décroche pas"</p>
-                    </div>
-                    <div class="problem-card">
-                        <div class="problem-icon">⏰</div>
-                        <p>"Le soir et le week-end, je perds des opportunités"</p>
-                    </div>
-                    <div class="problem-card">
-                        <div class="problem-icon">🔁</div>
-                        <p>"Je réponds 10 fois par jour aux mêmes questions"</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Solution -->
-            <div class="solution-block">
-                <h2 class="section-title-solution">
-                    <span class="title-icon">✨</span>
-                    Votre Assistant IA fait tout ça pour vous
-                </h2>
-                <div class="solution-grid">
-                    <div class="solution-card">
-                        <div class="solution-number">1</div>
-                        <h3>Répond instantanément</h3>
-                        <p>Dès qu'un client vous contacte (appel, SMS, WhatsApp, site web), l'IA répond en <strong>moins de 10 secondes</strong></p>
-                    </div>
-                    <div class="solution-card">
-                        <div class="solution-number">2</div>
-                        <h3>Prend les rendez-vous</h3>
-                        <p>L'assistant accède à votre agenda et <strong>propose des créneaux disponibles</strong> automatiquement</p>
-                    </div>
-                    <div class="solution-card">
-                        <div class="solution-number">3</div>
-                        <h3>Répond aux questions</h3>
-                        <p>Tarifs, horaires, services, disponibilités... <strong>L'IA connaît votre entreprise</strong> par cœur</p>
-                    </div>
-                    <div class="solution-card">
-                        <div class="solution-number">4</div>
-                        <h3>Vous alerte si urgent</h3>
-                        <p>En cas de vraie urgence, <strong>vous recevez une notification</strong> pour intervenir directement</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Comparaison Avant/Après - Carrousel -->
-    <section class="before-after">
-        <div class="container">
-            <h2 class="section-title-center">
-                L'impact sur votre entreprise
-            </h2>
-            
-            <div class="comparison-carousel">
-                <div class="comparison-track">
-                    <!-- Slide 1 : Sans Orphika -->
-                    <div class="comparison-slide">
-                        <div class="comparison-card negative">
-                            <h3>❌ Sans Orphika</h3>
-                            <div class="comparison-icon">😰</div>
-                            <ul>
-                                <li>5-10 appels manqués par jour</li>
-                                <li>Clients qui vont chez la concurrence</li>
-                                <li>Temps perdu à répondre aux mêmes questions</li>
-                                <li>Pas de disponibilité soir/week-end</li>
-                                <li>Stress de devoir tout gérer seul</li>
-                            </ul>
-                            <div class="comparison-result negative">
-                                <strong>Perte estimée : 500-2000€/mois</strong>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Contact CTA Final -->
+        <section id="contact" class="contact-final" role="region" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="cta-final-block">
+                    <h2 id="contact-title">Prêt à ne plus manquer aucun client ?</h2>
+                    <p>Réservez votre démo gratuite maintenant (30 minutes, sans engagement)</p>
                     
-                    <!-- Slide 2 : Avec Orphika -->
-                    <div class="comparison-slide">
-                        <div class="comparison-card positive">
-                            <h3>✅ Avec Orphika</h3>
-                            <div class="comparison-icon">🎉</div>
-                            <ul>
-                                <li>100% des demandes traitées</li>
-                                <li>Clients pris en charge immédiatement</li>
-                                <li>Automatisation des réponses répétitives</li>
-                                <li>Service 24h/24 et 7j/7</li>
-                                <li>Vous vous concentrez sur votre métier</li>
-                            </ul>
-                            <div class="comparison-result positive">
-                                <strong>Gain estimé : +25% de CA</strong>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 3 : Employé (comparaison) -->
-                    <div class="comparison-slide">
-                        <div class="comparison-card neutral">
-                            <h3>💼 Avec un employé</h3>
-                            <div class="comparison-icon">🤷</div>
-                            <ul>
-                                <li>Coût : 1500-2000€/mois</li>
-                                <li>+ Charges sociales</li>
-                                <li>+ Congés payés</li>
-                                <li>Disponibilité limitée (8h/jour)</li>
-                                <li>Peut tomber malade</li>
-                            </ul>
-                            <div class="comparison-result neutral">
-                                <strong>Budget : 1500-2000€/mois</strong>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Contrôles carrousel -->
-                <button class="carousel-control prev" onclick="moveComparison(-1)">‹</button>
-                <button class="carousel-control next" onclick="moveComparison(1)">›</button>
-                
-                <!-- Indicateurs -->
-                <div class="carousel-indicators">
-                    <span class="indicator active" onclick="goToComparison(0)"></span>
-                    <span class="indicator" onclick="goToComparison(1)"></span>
-                    <span class="indicator" onclick="goToComparison(2)"></span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pour Qui - Témoignages Carrousel -->
-    <section id="pourqui" class="pourqui-optimized">
-        <div class="container">
-            <h2 class="section-title-center">
-                Ils ont déjà franchi le pas
-            </h2>
-            <p class="section-subtitle">Des professionnels comme vous qui ont automatisé leur relation client</p>
-            
-            <div class="testimonials-carousel">
-                <div class="testimonials-track">
-                    <!-- Témoignage 1 -->
-                    <div class="testimonial-slide">
-                        <div class="testimonial-card">
-                            <div class="testimonial-header">
-                                <div class="avatar-large">JM</div>
-                                <div class="testimonial-meta">
-                                    <strong>Jean-Marc D.</strong>
-                                    <span>Plombier • Lyon</span>
+                    <div class="contact-methods">
+                        <div class="contact-priority">
+                            <h3>📧 Formulaire express (réponse en 24h)</h3>
+                            <form id="simpleContactForm" class="inline-form">
+                                <div class="form-row">
+                                    <input type="text" name="name" placeholder="Votre nom" required aria-required="true">
+                                    <input type="text" name="business" placeholder="Votre métier (ex: plombier)" required aria-required="true">
                                 </div>
-                            </div>
-                            <p class="testimonial-text">
-                                "Avant, je manquais 7-8 appels par jour parce que j'étais sur les chantiers. 
-                                Maintenant, mon assistant IA répond, prend les RDV et me prévient pour les urgences. 
-                                <strong>J'ai gagné 3 nouveaux clients dès le premier mois.</strong>"
-                            </p>
-                            <div class="testimonial-result">
-                                <div class="result-badge">+3 clients/mois</div>
-                                <div class="result-badge">+1200€ CA/mois</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Témoignage 2 -->
-                    <div class="testimonial-slide">
-                        <div class="testimonial-card">
-                            <div class="testimonial-header">
-                                <div class="avatar-large">SL</div>
-                                <div class="testimonial-meta">
-                                    <strong>Sophie L.</strong>
-                                    <span>Coiffeuse • Bruxelles</span>
+                                <div class="form-row">
+                                    <input type="email" name="email" placeholder="Votre email" required aria-required="true">
+                                    <input type="tel" name="phone" placeholder="Téléphone (optionnel)">
                                 </div>
-                            </div>
-                            <p class="testimonial-text">
-                                "Mes clientes réservent via WhatsApp 24h/24. Fini les allers-retours par SMS ! 
-                                L'IA gère tout : rendez-vous, rappels, annulations. 
-                                <strong>Mon salon ne désemplit plus.</strong>"
-                            </p>
-                            <div class="testimonial-result">
-                                <div class="result-badge">Agenda plein</div>
-                                <div class="result-badge">-70% admin</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Témoignage 3 -->
-                    <div class="testimonial-slide">
-                        <div class="testimonial-card">
-                            <div class="testimonial-header">
-                                <div class="avatar-large">PD</div>
-                                <div class="testimonial-meta">
-                                    <strong>Pierre D.</strong>
-                                    <span>Garage auto • Marseille</span>
+                                <div class="form-consent-inline">
+                                    <input type="checkbox" id="consent" required aria-required="true">
+                                    <label for="consent">
+                                        J'accepte d'être recontacté pour organiser ma démo gratuite
+                                    </label>
                                 </div>
+                                <button type="submit" class="cta-submit">
+                                    <span class="btn-text">RÉSERVER MA DÉMO GRATUITE</span>
+                                    <span class="btn-arrow">→</span>
+                                </button>
+                            </form>
+                            <div id="simpleFormMessage" class="form-message"></div>
+                        </div>
+                        
+                        <div class="contact-alternative">
+                            <h3>Ou contactez-nous directement</h3>
+                            <div class="contact-direct">
+                                <a href="mailto:support@orphika.io" class="contact-btn">
+                                    <span class="contact-icon">📧</span>
+                                    <span>support@orphika.io</span>
+                                </a>
                             </div>
-                            <p class="testimonial-text">
-                                "Les clients demandent les tarifs, les disponibilités, prennent RDV... 
-                                tout se fait automatiquement. Je me concentre sur la mécanique. 
-                                <strong>Productivité x2 !</strong>"
-                            </p>
-                            <div class="testimonial-result">
-                                <div class="result-badge">x2 productivité</div>
-                                <div class="result-badge">5★ avis Google</div>
+                            <div class="contact-badges">
+                                <div class="mini-badge">✓ Réponse < 24h</div>
+                                <div class="mini-badge">✓ Sans engagement</div>
+                                <div class="mini-badge">✓ RGPD</div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Contrôles -->
-                <button class="carousel-control prev" onclick="moveTestimonial(-1)">‹</button>
-                <button class="carousel-control next" onclick="moveTestimonial(1)">›</button>
-                
-                <!-- Indicateurs -->
-                <div class="carousel-indicators">
-                    <span class="indicator active" onclick="goToTestimonial(0)"></span>
-                    <span class="indicator" onclick="goToTestimonial(1)"></span>
-                    <span class="indicator" onclick="goToTestimonial(2)"></span>
-                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Tarifs avec Ancrage Prix -->
-    <section id="tarifs" class="pricing-section">
-        <div class="container">
-            <h2 class="section-title-center">
-                Combien ça coûte vraiment ?
-            </h2>
-            <p class="section-subtitle">Comparé au coût d'un employé ou d'appels manqués</p>
-            
-            <!-- Comparaison prix -->
-            <div class="price-comparison">
-                <div class="price-card expensive">
-                    <div class="price-label">❌ Employé mi-temps</div>
-                    <div class="price-amount striked">1500-2000€<span>/mois</span></div>
-                    <ul>
-                        <li>+ Charges sociales</li>
-                        <li>+ Congés payés</li>
-                        <li>+ Formation</li>
-                        <li>Disponibilité limitée</li>
-                    </ul>
-                </div>
-                
-                <div class="price-card best">
-                    <div class="price-badge">MEILLEUR CHOIX</div>
-                    <div class="price-label">✅ Assistant IA Orphika</div>
-                    <div class="price-amount highlighted">
-                        150-400€<span>/mois</span>
-                    </div>
-                    <ul>
-                        <li>✓ Disponible 24/7/365</li>
-                        <li>✓ Pas de congés</li>
-                        <li>✓ Pas de charges</li>
-                        <li>✓ Répond instantanément</li>
-                        <li>✓ Ne tombe jamais malade</li>
-                    </ul>
-                    <div class="savings-badge">
-                        💰 Économie : <strong>1200-1600€/mois</strong>
-                    </div>
-                </div>
-                
-                <div class="price-card expensive">
-                    <div class="price-label">❌ Appels manqués</div>
-                    <div class="price-amount striked">500-2000€<span>/mois</span></div>
-                    <ul>
-                        <li>Clients perdus</li>
-                        <li>Opportunités ratées</li>
-                        <li>Mauvaise réputation</li>
-                        <li>Concurrence gagnée</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Forfaits détaillés -->
-            <div class="packages-grid">
-                <div class="package-card">
-                    <h3>ESSENTIEL</h3>
-                    <div class="package-price">
-                        <span class="setup">À partir de 1000€</span>
-                        <span class="label">Installation</span>
-                    </div>
-                    <div class="package-price">
-                        <span class="monthly">150-250€/mois</span>
-                        <span class="label">Maintenance</span>
-                    </div>
-                    <ul class="package-features">
-                        <li>✓ Assistant WhatsApp ou site web</li>
-                        <li>✓ Réponses FAQ automatiques</li>
-                        <li>✓ Prise de RDV simple</li>
-                        <li>✓ Support par email</li>
-                        <li>✓ Tout géré par notre équipe</li>
-                    </ul>
-                    <button class="cta-package">Demander un devis</button>
-                </div>
-                
-                <div class="package-card popular">
-                    <div class="popular-badge">⭐ CHOIX N°1</div>
-                    <h3>PROFESSIONNEL</h3>
-                    <div class="package-price">
-                        <span class="setup">À partir de 1500€</span>
-                        <span class="label">Installation</span>
-                    </div>
-                    <div class="package-price">
-                        <span class="monthly">300-500€/mois</span>
-                        <span class="label">Maintenance</span>
-                    </div>
-                    <ul class="package-features">
-                        <li>✓ Multi-canal (WhatsApp + Web + Téléphone)</li>
-                        <li>✓ Intégration agenda Google/Outlook</li>
-                        <li>✓ Gestion urgences avec alertes</li>
-                        <li>✓ Génération devis automatique</li>
-                        <li>✓ Support prioritaire</li>
-                        <li>✓ <strong>Tout géré par notre équipe</strong></li>
-                    </ul>
-                    <button class="cta-package primary">Demander un devis</button>
-                </div>
-                
-                <div class="package-card">
-                    <h3>PREMIUM</h3>
-                    <div class="package-price">
-                        <span class="setup">À partir de 3000€</span>
-                        <span class="label">Installation</span>
-                    </div>
-                    <div class="package-price">
-                        <span class="monthly">500-700€/mois</span>
-                        <span class="label">Maintenance</span>
-                    </div>
-                    <ul class="package-features">
-                        <li>✓ Tout PROFESSIONNEL</li>
-                        <li>✓ Intégration CRM</li>
-                        <li>✓ Assistant vocal avancé</li>
-                        <li>✓ Reporting détaillé</li>
-                        <li>✓ Support téléphonique dédié</li>
-                        <li>✓ <strong>Tout géré par notre équipe</strong></li>
-                    </ul>
-                    <button class="cta-package">Demander un devis</button>
-                </div>
-            </div>
-            
-            <div class="pricing-guarantee">
-                <p><strong>🎁 OFFRE SPÉCIALE :</strong> Démo gratuite + 1er mois maintenance offert si vous signez avant fin du mois</p>
-                <p><small>✓ Sans engagement • ✓ Remboursement si non-conforme • ✓ Support inclus</small></p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Accordéon -->
-    <section class="faq-section">
-        <div class="container">
-            <h2 class="section-title-center">Questions fréquentes</h2>
-            <p class="section-subtitle">Tout ce que vous devez savoir avant de démarrer</p>
-            
-            <div class="faq-accordion">
-                <div class="faq-accordion-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        <span class="faq-icon">⏱️</span>
-                        <span class="faq-text">Ça prend combien de temps à installer ?</span>
-                        <span class="faq-toggle">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p><strong>5 à 7 jours</strong> de la signature à la mise en service. Notre équipe s'occupe de tout : développement, intégration, tests, formation. Vous n'avez rien à faire techniquement.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-accordion-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        <span class="faq-icon">🤖</span>
-                        <span class="faq-text">C'est compliqué à utiliser ?</span>
-                        <span class="faq-toggle">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p><strong>Non, zéro compétence technique requise.</strong> On vous forme en 1h et vous pouvez modifier les réponses vous-même via une interface simple. Si vous savez envoyer un email, vous savez utiliser votre assistant IA.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-accordion-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        <span class="faq-icon">📱</span>
-                        <span class="faq-text">Ça marche sur quels canaux ?</span>
-                        <span class="faq-toggle">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p><strong>Tous les canaux que vous utilisez déjà :</strong> WhatsApp Business, site web (chatbot), téléphone (assistant vocal), Facebook Messenger, Instagram, email. Vous choisissez selon vos besoins et votre budget.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-accordion-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        <span class="faq-icon">💰</span>
-                        <span class="faq-text">Et si je veux arrêter ?</span>
-                        <span class="faq-toggle">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p><strong>Aucun engagement de durée.</strong> Vous pouvez résilier avec un préavis de 30 jours. Remboursement si l'assistant n'est pas conforme à ce qui était promis dans le devis.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-accordion-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        <span class="faq-icon">🔒</span>
-                        <span class="faq-text">Mes données clients sont sécurisées ?</span>
-                        <span class="faq-toggle">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p><strong>Oui, 100% conforme RGPD.</strong> Vos données et celles de vos clients sont hébergées en Europe, chiffrées et protégées. Nous ne les partageons jamais avec des tiers. Vous restez propriétaire de toutes vos données.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-accordion-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        <span class="faq-icon">🛠️</span>
-                        <span class="faq-text">Que comprend la maintenance mensuelle ?</span>
-                        <span class="faq-toggle">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p><strong>Tout est inclus :</strong> surveillance 24/7, corrections de bugs, mises à jour de sécurité, ajout de nouvelles réponses (jusqu'à 20/mois), optimisation continue, support technique prioritaire, statistiques mensuelles détaillées.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-accordion-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        <span class="faq-icon">🌍</span>
-                        <span class="faq-text">Vous êtes basés en Algérie, c'est un problème ?</span>
-                        <span class="faq-toggle">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p><strong>Non, au contraire !</strong> Nous travaillons aux heures françaises (même fuseau horaire UTC+1). Nos clients sont en Europe francophone. Paiement sécurisé en euros via Wise. Et nos tarifs sont 30-40% plus compétitifs grâce à nos coûts optimisés.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-accordion-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        <span class="faq-icon">💬</span>
-                        <span class="faq-text">L'assistant comprend vraiment le français ?</span>
-                        <span class="faq-toggle">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p><strong>Oui, parfaitement.</strong> L'IA est entraînée spécifiquement en français et comprend le langage naturel, les expressions courantes et même l'argot. Elle s'adapte au ton de votre métier (formel pour avocat, convivial pour restaurant...).</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="faq-cta">
-                <p><strong>Vous avez d'autres questions ?</strong></p>
-                <button class="cta-secondary">
-                    <span class="cta-icon">💬</span>
-                    Parlons-en par WhatsApp
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact CTA Final -->
-    <section id="contact" class="contact-final">
-        <div class="container">
-            <div class="cta-final-block">
-                <h2>Prêt à ne plus manquer aucun client ?</h2>
-                <p>Réservez votre démo gratuite maintenant (30 minutes, sans engagement)</p>
-                
-                <div class="contact-methods">
-                    <div class="contact-priority">
-                        <h3>📧 Formulaire express (réponse en 24h)</h3>
-                        <form id="simpleContactForm" class="inline-form">
-                            <div class="form-row">
-                                <input type="text" name="name" placeholder="Votre nom" required>
-                                <input type="text" name="business" placeholder="Votre métier (ex: plombier)" required>
-                            </div>
-                            <div class="form-row">
-                                <input type="email" name="email" placeholder="Votre email" required>
-                                <input type="tel" name="phone" placeholder="Téléphone (optionnel)">
-                            </div>
-                            <div class="form-consent-inline">
-                                <input type="checkbox" id="consent" required>
-                                <label for="consent">
-                                    J'accepte d'être recontacté pour organiser ma démo gratuite
-                                </label>
-                            </div>
-                            <button type="submit" class="cta-submit">
-                                <span class="btn-text">RÉSERVER MA DÉMO GRATUITE</span>
-                                <span class="btn-arrow">→</span>
-                            </button>
-                        </form>
-                        <div id="simpleFormMessage" class="form-message"></div>
-                    </div>
-                    
-                    <div class="contact-alternative">
-                        <h3>Ou contactez-nous directement</h3>
-                        <div class="contact-direct">
-                            <a href="mailto:support@orphika.io" class="contact-btn">
-                                <span class="contact-icon">📧</span>
-                                <span>support@orphika.io</span>
-                            </a>
-                        </div>
-                        <div class="contact-badges">
-                            <div class="mini-badge">✓ Réponse < 24h</div>
-                            <div class="mini-badge">✓ Sans engagement</div>
-                            <div class="mini-badge">✓ RGPD</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer Optimisé -->
-    <footer class="footer-optimized">
+    <footer class="footer-optimized" role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
                     <div class="logo-container">
-                        <img src="logo.png" alt="Orphika IA" class="logo">
+                        <img src="logo.png" alt="Orphika IA" class="logo" loading="lazy">
                         <div class="logo-text">
                             <span class="logo-main">ORPHIKA</span>
                             <span class="logo-sub">IA AGENCY</span>
@@ -806,7 +831,7 @@
     <!-- Modals -->
     <div id="mentionsModal" class="modal">
         <div class="modal-content glass-card">
-            <span class="close-modal" onclick="closeModal('mentions')">&times;</span>
+            <span class="close-modal" onclick="closeModal('mentions')" aria-label="Fermer">&times;</span>
             <h3>Mentions Légales</h3>
             <div class="modal-body">
                 <p><strong>Édition et publication :</strong></p>
@@ -821,7 +846,7 @@
 
     <div id="confidentialiteModal" class="modal">
         <div class="modal-content glass-card">
-            <span class="close-modal" onclick="closeModal('confidentialite')">&times;</span>
+            <span class="close-modal" onclick="closeModal('confidentialite')" aria-label="Fermer">&times;</span>
             <h3>Politique de Confidentialité</h3>
             <div class="modal-body">
                 <p><strong>Données collectées :</strong> Nom, email, métier (via formulaire uniquement)</p>
@@ -836,7 +861,7 @@
 
     <div id="cguModal" class="modal">
         <div class="modal-content glass-card">
-            <span class="close-modal" onclick="closeModal('cgu')">&times;</span>
+            <span class="close-modal" onclick="closeModal('cgu')" aria-label="Fermer">&times;</span>
             <h3>Conditions Générales de Vente</h3>
             <div class="modal-body">
                 <p><strong>Prestataire :</strong> Orphika IA Agency</p>
