@@ -14,6 +14,120 @@ const CONFIG = {
     smoothScrollDuration: 1000
 };
 
+// Variables globales pour les carrousels
+let currentComparisonIndex = 0;
+let currentTestimonialIndex = 0;
+let comparisonAutoPlay;
+let testimonialAutoPlay;
+
+// =========================================
+// FONCTIONS CARROUSELS (DOIVENT ÊTRE GLOBALES)
+// =========================================
+
+// Carrousel Comparaison
+function moveComparison(direction) {
+    const comparisonSlides = document.querySelectorAll('.comparison-slide');
+    if (!comparisonSlides.length) return;
+    
+    currentComparisonIndex += direction;
+    
+    if (currentComparisonIndex < 0) {
+        currentComparisonIndex = comparisonSlides.length - 1;
+    } else if (currentComparisonIndex >= comparisonSlides.length) {
+        currentComparisonIndex = 0;
+    }
+    
+    updateComparisonCarousel();
+}
+
+function goToComparison(index) {
+    const comparisonSlides = document.querySelectorAll('.comparison-slide');
+    if (index >= 0 && index < comparisonSlides.length) {
+        currentComparisonIndex = index;
+        updateComparisonCarousel();
+    }
+}
+
+function updateComparisonCarousel() {
+    const track = document.querySelector('.comparison-track');
+    const comparisonIndicators = document.querySelectorAll('.comparison-carousel .indicator');
+    
+    if (track) {
+        track.style.transform = `translateX(-${currentComparisonIndex * 100}%)`;
+    }
+    
+    // Mettre à jour indicateurs
+    comparisonIndicators.forEach((indicator, index) => {
+        if (index === currentComparisonIndex) {
+            indicator.classList.add('active');
+        } else {
+            indicator.classList.remove('active');
+        }
+    });
+}
+
+// Carrousel Témoignages
+function moveTestimonial(direction) {
+    const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+    if (!testimonialSlides.length) return;
+    
+    currentTestimonialIndex += direction;
+    
+    if (currentTestimonialIndex < 0) {
+        currentTestimonialIndex = testimonialSlides.length - 1;
+    } else if (currentTestimonialIndex >= testimonialSlides.length) {
+        currentTestimonialIndex = 0;
+    }
+    
+    updateTestimonialCarousel();
+}
+
+function goToTestimonial(index) {
+    const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+    if (index >= 0 && index < testimonialSlides.length) {
+        currentTestimonialIndex = index;
+        updateTestimonialCarousel();
+    }
+}
+
+function updateTestimonialCarousel() {
+    const track = document.querySelector('.testimonials-track');
+    const testimonialIndicators = document.querySelectorAll('.testimonials-carousel .indicator');
+    
+    if (track) {
+        track.style.transform = `translateX(-${currentTestimonialIndex * 100}%)`;
+    }
+    
+    // Mettre à jour indicateurs
+    testimonialIndicators.forEach((indicator, index) => {
+        if (index === currentTestimonialIndex) {
+            indicator.classList.add('active');
+        } else {
+            indicator.classList.remove('active');
+        }
+    });
+}
+
+// FAQ Accordéon
+function toggleFAQ(button) {
+    const answer = button.nextElementSibling;
+    const isActive = button.classList.contains('active');
+    
+    // Fermer toutes les autres FAQs
+    document.querySelectorAll('.faq-question').forEach(q => {
+        q.classList.remove('active');
+    });
+    document.querySelectorAll('.faq-answer').forEach(a => {
+        a.classList.remove('active');
+    });
+    
+    // Toggle la FAQ cliquée
+    if (!isActive) {
+        button.classList.add('active');
+        answer.classList.add('active');
+    }
+}
+
 // =========================================
 // INITIALISATION AU CHARGEMENT
 // =========================================
@@ -23,53 +137,40 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('📧 Contact: support@orphika.io');
     console.log('🔒 Conforme RGPD - Aucun cookie');
     
-    // =========================================
-    // CARROUSEL COMPARAISON
-    // =========================================
+    // Initialiser toutes les fonctionnalités
+    initScrollAnimations();
+    initSmoothScroll();
+    initFormHandler();
+    initCTAButtons();
+    initModals();
+    initTrustBar();
+    initResponsiveMenu();
+    
+    // Initialiser les carrousels
+    initCarousels();
+    
+    // Animations au chargement
+    animateHeroOnLoad();
+});
 
-    let currentComparisonIndex = 0;
-    const comparisonSlides = document.querySelectorAll('.comparison-slide');
-    const comparisonIndicators = document.querySelectorAll('.comparison-carousel .indicator');
+// =========================================
+// INITIALISATION DES CARROUSELS
+// =========================================
 
-    function moveComparison(direction) {
-        if (!comparisonSlides.length) return;
-        
-        currentComparisonIndex += direction;
-        
-        if (currentComparisonIndex < 0) {
-            currentComparisonIndex = comparisonSlides.length - 1;
-        } else if (currentComparisonIndex >= comparisonSlides.length) {
-            currentComparisonIndex = 0;
-        }
-        
-        updateComparisonCarousel();
-    }
-
-    function goToComparison(index) {
-        currentComparisonIndex = index;
-        updateComparisonCarousel();
-    }
-
-    function updateComparisonCarousel() {
-        const track = document.querySelector('.comparison-track');
-        if (track) {
-            track.style.transform = `translateX(-${currentComparisonIndex * 100}%)`;
-        }
-        
-        // Mettre à jour indicateurs
-        comparisonIndicators.forEach((indicator, index) => {
-            if (index === currentComparisonIndex) {
-                indicator.classList.add('active');
-            } else {
-                indicator.classList.remove('active');
-            }
-        });
-    }
-
-    // Auto-défilement comparaison (optionnel - arrêtable)
-    let comparisonAutoPlay = setInterval(() => {
+function initCarousels() {
+    // Initialiser l'état des carrousels
+    updateComparisonCarousel();
+    updateTestimonialCarousel();
+    
+    // Auto-défilement comparaison
+    comparisonAutoPlay = setInterval(() => {
         moveComparison(1);
     }, 5000);
+
+    // Auto-défilement témoignages
+    testimonialAutoPlay = setInterval(() => {
+        moveTestimonial(1);
+    }, 6000);
 
     // Arrêter auto-défilement au survol
     const comparisonCarousel = document.querySelector('.comparison-carousel');
@@ -85,55 +186,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // =========================================
-    // CARROUSEL TÉMOIGNAGES
-    // =========================================
-
-    let currentTestimonialIndex = 0;
-    const testimonialSlides = document.querySelectorAll('.testimonial-slide');
-    const testimonialIndicators = document.querySelectorAll('.testimonials-carousel .indicator');
-
-    function moveTestimonial(direction) {
-        if (!testimonialSlides.length) return;
-        
-        currentTestimonialIndex += direction;
-        
-        if (currentTestimonialIndex < 0) {
-            currentTestimonialIndex = testimonialSlides.length - 1;
-        } else if (currentTestimonialIndex >= testimonialSlides.length) {
-            currentTestimonialIndex = 0;
-        }
-        
-        updateTestimonialCarousel();
-    }
-
-    function goToTestimonial(index) {
-        currentTestimonialIndex = index;
-        updateTestimonialCarousel();
-    }
-
-    function updateTestimonialCarousel() {
-        const track = document.querySelector('.testimonials-track');
-        if (track) {
-            track.style.transform = `translateX(-${currentTestimonialIndex * 100}%)`;
-        }
-        
-        // Mettre à jour indicateurs
-        testimonialIndicators.forEach((indicator, index) => {
-            if (index === currentTestimonialIndex) {
-                indicator.classList.add('active');
-            } else {
-                indicator.classList.remove('active');
-            }
-        });
-    }
-
-    // Auto-défilement témoignages
-    let testimonialAutoPlay = setInterval(() => {
-        moveTestimonial(1);
-    }, 6000);
-
-    // Arrêter auto-défilement au survol
     const testimonialCarousel = document.querySelector('.testimonials-carousel');
     if (testimonialCarousel) {
         testimonialCarousel.addEventListener('mouseenter', () => {
@@ -147,29 +199,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // =========================================
-    // FAQ ACCORDÉON
-    // =========================================
-
-    function toggleFAQ(button) {
-        const answer = button.nextElementSibling;
-        const isActive = button.classList.contains('active');
-        
-        // Fermer toutes les autres FAQs
-        document.querySelectorAll('.faq-question').forEach(q => {
-            q.classList.remove('active');
-        });
-        document.querySelectorAll('.faq-answer').forEach(a => {
-            a.classList.remove('active');
-        });
-        
-        // Toggle la FAQ cliquée
-        if (!isActive) {
-            button.classList.add('active');
-            answer.classList.add('active');
-        }
-    }
-
     // Ouvrir la première FAQ par défaut
     setTimeout(() => {
         const firstFAQ = document.querySelector('.faq-question');
@@ -179,19 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 500);
 
     console.log('✅ Carrousels et accordéons initialisés');
-
-    // Initialiser toutes les fonctionnalités
-    initScrollAnimations();
-    initSmoothScroll();
-    initFormHandler();
-    initCTAButtons();
-    initModals();
-    initTrustBar();
-    initResponsiveMenu();
-    
-    // Animations au chargement
-    animateHeroOnLoad();
-});
+}
 
 // =========================================
 // ANIMATIONS AU SCROLL
@@ -673,25 +690,6 @@ if ('loading' in HTMLImageElement.prototype) {
 }
 
 // =========================================
-// DÉSACTIVATION CLIC DROIT (OPTIONNEL)
-// =========================================
-
-// Décommenter si vous voulez protéger le contenu
-/*
-document.addEventListener('contextmenu', (e) => {
-    e.preventDefault();
-    console.log('Clic droit désactivé');
-});
-
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
-        e.preventDefault();
-        console.log('DevTools désactivés');
-    }
-});
-*/
-
-// =========================================
 // MESSAGES CONSOLE STYLÉS
 // =========================================
 
@@ -716,17 +714,7 @@ console.log(
 // EXPORT FONCTIONS GLOBALES
 // =========================================
 
-window.OrphikaIA = {
-    scrollToContact,
-    showModal: window.showModal,
-    closeModal: window.closeModal,
-    trackInteraction,
-    // Fonctions des carrousels
-    moveComparison: window.moveComparison,
-    moveTestimonial: window.moveTestimonial,
-    goToComparison: window.goToComparison,
-    goToTestimonial: window.goToTestimonial,
-    toggleFAQ: window.toggleFAQ
-};
+// Ces fonctions sont maintenant globales par défaut
+// Pas besoin de les attacher à window explicitement
 
 console.log('✅ Orphika IA - Toutes les fonctionnalités initialisées');
