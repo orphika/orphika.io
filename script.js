@@ -22,7 +22,165 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('🚀 Orphika IA - Site optimisé chargé');
     console.log('📧 Contact: support@orphika.io');
     console.log('🔒 Conforme RGPD - Aucun cookie');
+    ```javascript
+// =========================================
+// CARROUSEL COMPARAISON
+// =========================================
+
+let currentComparisonIndex = 0;
+const comparisonSlides = document.querySelectorAll('.comparison-slide');
+const comparisonIndicators = document.querySelectorAll('.comparison-carousel .indicator');
+
+function moveComparison(direction) {
+    if (!comparisonSlides.length) return;
     
+    currentComparisonIndex += direction;
+    
+    if (currentComparisonIndex < 0) {
+        currentComparisonIndex = comparisonSlides.length - 1;
+    } else if (currentComparisonIndex >= comparisonSlides.length) {
+        currentComparisonIndex = 0;
+    }
+    
+    updateComparisonCarousel();
+}
+
+function goToComparison(index) {
+    currentComparisonIndex = index;
+    updateComparisonCarousel();
+}
+
+function updateComparisonCarousel() {
+    const track = document.querySelector('.comparison-track');
+    if (track) {
+        track.style.transform = `translateX(-${currentComparisonIndex * 100}%)`;
+    }
+    
+    // Mettre à jour indicateurs
+    comparisonIndicators.forEach((indicator, index) => {
+        if (index === currentComparisonIndex) {
+            indicator.classList.add('active');
+        } else {
+            indicator.classList.remove('active');
+        }
+    });
+}
+
+// Auto-défilement comparaison (optionnel - arrêtable)
+let comparisonAutoPlay = setInterval(() => {
+    moveComparison(1);
+}, 5000);
+
+// Arrêter auto-défilement au survol
+const comparisonCarousel = document.querySelector('.comparison-carousel');
+if (comparisonCarousel) {
+    comparisonCarousel.addEventListener('mouseenter', () => {
+        clearInterval(comparisonAutoPlay);
+    });
+    
+    comparisonCarousel.addEventListener('mouseleave', () => {
+        comparisonAutoPlay = setInterval(() => {
+            moveComparison(1);
+        }, 5000);
+    });
+}
+
+// =========================================
+// CARROUSEL TÉMOIGNAGES
+// =========================================
+
+let currentTestimonialIndex = 0;
+const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+const testimonialIndicators = document.querySelectorAll('.testimonials-carousel .indicator');
+
+function moveTestimonial(direction) {
+    if (!testimonialSlides.length) return;
+    
+    currentTestimonialIndex += direction;
+    
+    if (currentTestimonialIndex < 0) {
+        currentTestimonialIndex = testimonialSlides.length - 1;
+    } else if (currentTestimonialIndex >= testimonialSlides.length) {
+        currentTestimonialIndex = 0;
+    }
+    
+    updateTestimonialCarousel();
+}
+
+function goToTestimonial(index) {
+    currentTestimonialIndex = index;
+    updateTestimonialCarousel();
+}
+
+function updateTestimonialCarousel() {
+    const track = document.querySelector('.testimonials-track');
+    if (track) {
+        track.style.transform = `translateX(-${currentTestimonialIndex * 100}%)`;
+    }
+    
+    // Mettre à jour indicateurs
+    testimonialIndicators.forEach((indicator, index) => {
+        if (index === currentTestimonialIndex) {
+            indicator.classList.add('active');
+        } else {
+            indicator.classList.remove('active');
+        }
+    });
+}
+
+// Auto-défilement témoignages
+let testimonialAutoPlay = setInterval(() => {
+    moveTestimonial(1);
+}, 6000);
+
+// Arrêter auto-défilement au survol
+const testimonialCarousel = document.querySelector('.testimonials-carousel');
+if (testimonialCarousel) {
+    testimonialCarousel.addEventListener('mouseenter', () => {
+        clearInterval(testimonialAutoPlay);
+    });
+    
+    testimonialCarousel.addEventListener('mouseleave', () => {
+        testimonialAutoPlay = setInterval(() => {
+            moveTestimonial(1);
+        }, 6000);
+    });
+}
+
+// =========================================
+// FAQ ACCORDÉON
+// =========================================
+
+function toggleFAQ(button) {
+    const answer = button.nextElementSibling;
+    const isActive = button.classList.contains('active');
+    
+    // Fermer toutes les autres FAQs
+    document.querySelectorAll('.faq-question').forEach(q => {
+        q.classList.remove('active');
+    });
+    document.querySelectorAll('.faq-answer').forEach(a => {
+        a.classList.remove('active');
+    });
+    
+    // Toggle la FAQ cliquée
+    if (!isActive) {
+        button.classList.add('active');
+        answer.classList.add('active');
+    }
+}
+
+// Ouvrir la première FAQ par défaut
+setTimeout(() => {
+    const firstFAQ = document.querySelector('.faq-question');
+    if (firstFAQ) {
+        toggleFAQ(firstFAQ);
+    }
+}, 500);
+
+console.log('✅ Carrousels et accordéons initialisés');
+```
+
     // Initialiser toutes les fonctionnalités
     initScrollAnimations();
     initSmoothScroll();
