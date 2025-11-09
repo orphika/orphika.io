@@ -148,10 +148,15 @@ nav {
     gap: 12px;
 }
 
+/* === FIX LOGO - FORCER L'AFFICHAGE PERMANENT === */
 .logo {
-    height: 48px;
-    width: auto;
-    filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.3));
+    height: 48px !important;
+    width: auto !important;
+    filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.3)) !important;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    max-width: 100% !important;
 }
 
 .logo-text {
