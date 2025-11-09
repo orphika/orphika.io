@@ -1,156 +1,245 @@
-// Configuration Formspree - VOTRE ID
+// =========================================
+// ORPHIKA IA - JAVASCRIPT OPTIMISÉ
+// Version: 2.0 (Janvier 2025)
+// =========================================
+
+// Configuration Formspree - IMPORTANT : NE PAS MODIFIER
 const FORMSPREE_URL = 'https://formspree.io/f/mqawzbpn';
 
-// Animations au scroll
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+// Configuration générale
+const CONFIG = {
+    scrollAnimationThreshold: 0.15,
+    scrollAnimationDelay: 100,
+    formSuccessDisplayTime: 5000,
+    smoothScrollDuration: 1000
 };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
+// =========================================
+// INITIALISATION AU CHARGEMENT
+// =========================================
 
-// Animation des statistiques
-function animateStats() {
-    const statNumbers = document.querySelectorAll('.stat-number');
-    statNumbers.forEach(stat => {
-        const target = parseInt(stat.getAttribute('data-count'));
-        const duration = 2000;
-        const step = target / (duration / 16);
-        let current = 0;
-        
-        const timer = setInterval(() => {
-            current += step;
-            if (current >= target) {
-                current = target;
-                clearInterval(timer);
-            }
-            stat.textContent = Math.floor(current);
-        }, 16);
-    });
-}
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('🚀 Orphika IA - Site optimisé chargé');
+    console.log('📧 Contact: support@orphika.io');
+    console.log('🔒 Conforme RGPD - Aucun cookie');
+    
+    // Initialiser toutes les fonctionnalités
+    initScrollAnimations();
+    initSmoothScroll();
+    initFormHandler();
+    initCTAButtons();
+    initModals();
+    initTrustBar();
+    initResponsiveMenu();
+    
+    // Animations au chargement
+    animateHeroOnLoad();
+});
 
-// Carrousel "Pour qui"
-function initCarousel() {
-    const track = document.querySelector('.carousel-track');
-    const slides = document.querySelectorAll('.carousel-slide');
-    const prevBtn = document.querySelector('.carousel-prev');
-    const nextBtn = document.querySelector('.carousel-next');
-    
-    if (!track || !slides.length) return;
-    
-    let currentIndex = 0;
-    const slideCount = slides.length;
-    
-    function updateCarousel() {
-        track.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
-    
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % slideCount;
-        updateCarousel();
-    }
-    
-    function prevSlide() {
-        currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-        updateCarousel();
-    }
-    
-    // Événements
-    nextBtn.addEventListener('click', nextSlide);
-    prevBtn.addEventListener('click', prevSlide);
-    
-    // Défilement automatique
-    setInterval(nextSlide, 5000);
-}
+// =========================================
+// ANIMATIONS AU SCROLL
+// =========================================
 
-// Gestion du formulaire avec Formspree
-function initSimpleForm() {
-    const form = document.getElementById('simpleContactForm');
-    const messageDiv = document.getElementById('simpleFormMessage');
+function initScrollAnimations() {
+    const observerOptions = {
+        threshold: CONFIG.scrollAnimationThreshold,
+        rootMargin: '0px 0px -50px 0px'
+    };
     
-    if (form) {
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            // Validation RGPD
-            const consent = document.getElementById('consent');
-            if (!consent.checked) {
-                messageDiv.textContent = '❌ Vous devez accepter la politique de confidentialité';
-                messageDiv.className = 'form-message error';
-                messageDiv.style.display = 'block';
-                return;
-            }
-            
-            const submitButton = form.querySelector('button[type="submit"]');
-            const originalText = submitButton.innerHTML;
-            
-            // Désactiver le bouton
-            submitButton.disabled = true;
-            submitButton.innerHTML = 'ENVOI EN COURS...';
-            
-            try {
-                const formData = new FormData(form);
-                
-                // Envoi réel à Formspree
-                const response = await fetch(FORMSPREE_URL, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                
-                if (response.ok) {
-                    messageDiv.textContent = '✅ Merci ! Nous vous contactons rapidement pour organiser votre démo.';
-                    messageDiv.className = 'form-message success';
-                    messageDiv.style.display = 'block';
-                    form.reset();
-                } else {
-                    throw new Error('Erreur lors de l\'envoi');
-                }
-            } catch (error) {
-                messageDiv.textContent = '❌ Erreur d\'envoi. Contactez-nous directement à support@orphika.io';
-                messageDiv.className = 'form-message error';
-                messageDiv.style.display = 'block';
-            } finally {
-                // Réactiver le bouton
-                submitButton.disabled = false;
-                submitButton.innerHTML = originalText;
-                
-                // Cacher le message après 5 secondes
-                setTimeout(() => {
-                    messageDiv.style.display = 'none';
-                }, 5000);
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in');
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
             }
         });
-    }
+    }, observerOptions);
+    
+    // Éléments à observer
+    const animatedElements = document.querySelectorAll(
+        '.problem-card, .solution-card, .testimonial-card, ' +
+        '.package-card, .faq-item, .benefit-item'
+    );
+    
+    animatedElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
 }
 
-// Navigation smooth scroll
+// =========================================
+// SMOOTH SCROLL
+// =========================================
+
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
+            
             if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+                const headerOffset = 120; // Height of fixed header + trust bar
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
                 });
             }
         });
     });
 }
 
-// Gestion des modals
+// =========================================
+// GESTION FORMULAIRE FORMSPREE
+// =========================================
+
+function initFormHandler() {
+    const form = document.getElementById('simpleContactForm');
+    const messageDiv = document.getElementById('simpleFormMessage');
+    
+    if (!form) {
+        console.error('❌ Formulaire introuvable');
+        return;
+    }
+    
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        // Validation RGPD
+        const consent = document.getElementById('consent');
+        if (!consent || !consent.checked) {
+            showFormMessage(
+                '❌ Vous devez accepter la politique de confidentialité pour continuer',
+                'error'
+            );
+            return;
+        }
+        
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalText = submitButton.innerHTML;
+        
+        // État de chargement
+        submitButton.disabled = true;
+        submitButton.innerHTML = `
+            <span class="btn-text">ENVOI EN COURS...</span>
+            <span class="btn-arrow">⏳</span>
+        `;
+        
+        try {
+            const formData = new FormData(form);
+            
+            // Envoi à Formspree
+            const response = await fetch(FORMSPREE_URL, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                // Succès
+                showFormMessage(
+                    '✅ Merci ! Nous vous contacterons dans les 24h pour organiser votre démo gratuite.',
+                    'success'
+                );
+                form.reset();
+                
+                // Tracking événement (si analytics)
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'form_submission', {
+                        'event_category': 'engagement',
+                        'event_label': 'demo_request'
+                    });
+                }
+            } else {
+                throw new Error('Erreur serveur');
+            }
+        } catch (error) {
+            console.error('Erreur envoi formulaire:', error);
+            showFormMessage(
+                '❌ Une erreur s\'est produite. Contactez-nous directement à support@orphika.io',
+                'error'
+            );
+        } finally {
+            // Réactiver le bouton
+            submitButton.disabled = false;
+            submitButton.innerHTML = originalText;
+        }
+    });
+}
+
+function showFormMessage(message, type) {
+    const messageDiv = document.getElementById('simpleFormMessage');
+    if (!messageDiv) return;
+    
+    messageDiv.textContent = message;
+    messageDiv.className = `form-message ${type}`;
+    messageDiv.style.display = 'block';
+    
+    // Scroll vers le message
+    messageDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    
+    // Masquer après délai
+    setTimeout(() => {
+        messageDiv.style.display = 'none';
+    }, CONFIG.formSuccessDisplayTime);
+}
+
+// =========================================
+// BOUTONS CTA
+// =========================================
+
+function initCTAButtons() {
+    // Tous les boutons qui redirigent vers le formulaire
+    const ctaSelectors = [
+        '.cta-button-nav',
+        '.cta-primary',
+        '.cta-secondary',
+        '.cta-package'
+    ];
+    
+    ctaSelectors.forEach(selector => {
+        document.querySelectorAll(selector).forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                scrollToContact();
+            });
+        });
+    });
+}
+
+function scrollToContact() {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+        const headerOffset = 120;
+        const elementPosition = contactSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+        
+        // Focus sur le premier champ après scroll
+        setTimeout(() => {
+            const firstInput = contactSection.querySelector('input[type="text"]');
+            if (firstInput) firstInput.focus();
+        }, CONFIG.smoothScrollDuration);
+    }
+}
+
+// =========================================
+// MODALS (MENTIONS LÉGALES)
+// =========================================
+
 function initModals() {
+    // Fonctions globales pour les liens HTML
     window.showModal = (modalType) => {
         const modal = document.getElementById(modalType + 'Modal');
         if (modal) {
@@ -188,71 +277,291 @@ function initModals() {
     });
 }
 
-// Redirection des boutons vers contact
-function initButtonActions() {
-    // Tous ces boutons redirigent vers la section contact
-    const contactButtons = [
-        '.cyber-button', // Demo disponible nav
-        '.btn-primary', // Démarrer maintenant
-        '.btn-secondary' // Voir la démo
-    ];
+// =========================================
+// TRUST BAR COMPORTEMENT
+// =========================================
+
+function initTrustBar() {
+    const trustBar = document.querySelector('.trust-bar');
+    if (!trustBar) return;
     
-    contactButtons.forEach(selector => {
-        document.querySelectorAll(selector).forEach(button => {
-            button.addEventListener('click', () => {
-                document.getElementById('contact').scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            });
-        });
-    });
+    // Animation de l'élément urgence
+    const urgencyItem = trustBar.querySelector('.urgency');
+    if (urgencyItem) {
+        setInterval(() => {
+            urgencyItem.style.transform = 'scale(1.05)';
+            setTimeout(() => {
+                urgencyItem.style.transform = 'scale(1)';
+            }, 200);
+        }, 3000);
+    }
 }
 
-// Initialisation complète
-document.addEventListener('DOMContentLoaded', () => {
-    // Observer les éléments à animer
-    const animatedElements = document.querySelectorAll('.service-card, .stat-item, .profession-card');
-    animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
+// =========================================
+// ANIMATIONS HERO AU CHARGEMENT
+// =========================================
+
+function animateHeroOnLoad() {
+    const hero = document.querySelector('.hero-optimized');
+    if (!hero) return;
+    
+    // Animer les éléments du hero progressivement
+    const elements = [
+        '.badge-urgency',
+        '.hero-title',
+        '.hero-subtitle',
+        '.hero-benefits',
+        '.hero-cta',
+        '.social-proof',
+        '.phone-mockup'
+    ];
+    
+    elements.forEach((selector, index) => {
+        const element = hero.querySelector(selector);
+        if (element) {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }, index * 100);
+        }
     });
     
-    // Animation des stats
-    const statsSection = document.querySelector('.stats-bar');
-    const statsObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateStats();
-                statsObserver.unobserve(entry.target);
+    // Animer les badges flottants
+    setTimeout(() => {
+        document.querySelectorAll('.floating-badge').forEach((badge, index) => {
+            badge.style.opacity = '0';
+            badge.style.transform = 'scale(0.8)';
+            
+            setTimeout(() => {
+                badge.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                badge.style.opacity = '1';
+                badge.style.transform = 'scale(1)';
+            }, index * 200);
+        });
+    }, 800);
+}
+
+// =========================================
+// MENU RESPONSIVE (MOBILE)
+// =========================================
+
+function initResponsiveMenu() {
+    // Créer un bouton hamburger si mobile
+    const nav = document.querySelector('nav');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (window.innerWidth <= 768) {
+        const hamburger = document.createElement('button');
+        hamburger.className = 'hamburger-menu';
+        hamburger.innerHTML = '☰';
+        hamburger.style.cssText = `
+            display: block;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 8px;
+        `;
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+            navMenu.style.flexDirection = 'column';
+            navMenu.style.position = 'absolute';
+            navMenu.style.top = '100%';
+            navMenu.style.left = '0';
+            navMenu.style.width = '100%';
+            navMenu.style.background = 'rgba(15, 23, 42, 0.95)';
+            navMenu.style.padding = '20px';
+        });
+        
+        nav.insertBefore(hamburger, navMenu);
+    }
+}
+
+// =========================================
+// SCROLL EFFECTS (HEADER)
+// =========================================
+
+let lastScrollTop = 0;
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('.glass-header');
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // Ajouter shadow au scroll
+    if (scrollTop > 50) {
+        header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+    } else {
+        header.style.boxShadow = 'none';
+    }
+    
+    lastScrollTop = scrollTop;
+});
+
+// =========================================
+// ANIMATIONS CHAT BUBBLE (HERO)
+// =========================================
+
+function animateChatBubbles() {
+    const bubbles = document.querySelectorAll('.chat-bubble');
+    
+    bubbles.forEach((bubble, index) => {
+        bubble.style.opacity = '0';
+        bubble.style.transform = 'translateY(10px)';
+        
+        setTimeout(() => {
+            bubble.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            bubble.style.opacity = '1';
+            bubble.style.transform = 'translateY(0)';
+        }, index * 800);
+    });
+    
+    // Animer le typing indicator en dernier
+    const typingIndicator = document.querySelector('.typing-indicator');
+    if (typingIndicator) {
+        setTimeout(() => {
+            typingIndicator.style.opacity = '0';
+            typingIndicator.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+                typingIndicator.style.opacity = '1';
+            }, 100);
+        }, bubbles.length * 800);
+    }
+}
+
+// Lancer l'animation des bulles après chargement
+setTimeout(animateChatBubbles, 1000);
+
+// =========================================
+// VALIDATION FORMULAIRE TEMPS RÉEL
+// =========================================
+
+function initRealtimeValidation() {
+    const form = document.getElementById('simpleContactForm');
+    if (!form) return;
+    
+    const emailInput = form.querySelector('input[type="email"]');
+    const phoneInput = form.querySelector('input[type="tel"]');
+    
+    // Validation email
+    if (emailInput) {
+        emailInput.addEventListener('blur', () => {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (emailInput.value && !emailRegex.test(emailInput.value)) {
+                emailInput.style.borderColor = 'var(--alert-red)';
+            } else {
+                emailInput.style.borderColor = 'var(--success-green)';
             }
         });
+    }
+    
+    // Formatage téléphone
+    if (phoneInput) {
+        phoneInput.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 0) {
+                value = value.match(/.{1,2}/g).join(' ');
+            }
+            e.target.value = value;
+        });
+    }
+}
+
+initRealtimeValidation();
+
+// =========================================
+// TRACKING INTERACTIONS (OPTIONNEL)
+// =========================================
+
+function trackInteraction(action, label) {
+    // Si vous utilisez Google Analytics ou autre
+    if (typeof gtag !== 'undefined') {
+        gtag('event', action, {
+            'event_category': 'engagement',
+            'event_label': label
+        });
+    }
+    
+    console.log(`📊 Interaction: ${action} - ${label}`);
+}
+
+// Tracker les clics sur CTA
+document.querySelectorAll('.cta-primary, .cta-secondary, .cta-package').forEach(button => {
+    button.addEventListener('click', () => {
+        trackInteraction('cta_click', button.textContent.trim());
     });
-    if (statsSection) statsObserver.observe(statsSection);
-    
-    // Initialiser toutes les fonctionnalités
-    initCarousel();
-    initSimpleForm(); // ← Celle-ci est maintenant corrigée
-    initSmoothScroll();
-    initModals();
-    initButtonActions();
-    
-    // Message de bienvenue dans la console (optionnel)
-    console.log('🚀 Bienvenue sur Orphika IA - Site vitrine sécurisé RGPD');
-    console.log('📧 Contact : support@orphika.io');
-    console.log('🔒 Aucun cookie utilisé - Conforme RGPD');
 });
 
-// Désactiver le clic droit pour protéger le contenu (optionnel)
+// =========================================
+// PERFORMANCE OPTIMIZATION
+// =========================================
+
+// Lazy loading des images (si ajoutées plus tard)
+if ('loading' in HTMLImageElement.prototype) {
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    images.forEach(img => {
+        img.src = img.dataset.src;
+    });
+} else {
+    // Fallback pour navigateurs anciens
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+    document.body.appendChild(script);
+}
+
+// =========================================
+// DÉSACTIVATION CLIC DROIT (OPTIONNEL)
+// =========================================
+
+// Décommenter si vous voulez protéger le contenu
+/*
 document.addEventListener('contextmenu', (e) => {
     e.preventDefault();
+    console.log('Clic droit désactivé');
 });
 
-// Empêcher l'inspection (optionnel - léger)
 document.addEventListener('keydown', (e) => {
     if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
         e.preventDefault();
+        console.log('DevTools désactivés');
     }
 });
+*/
+
+// =========================================
+// MESSAGES CONSOLE STYLÉS
+// =========================================
+
+console.log(
+    '%c🚀 Orphika IA Agency',
+    'color: #f97316; font-size: 24px; font-weight: bold;'
+);
+console.log(
+    '%cSite optimisé pour la conversion 📈',
+    'color: #10b981; font-size: 14px;'
+);
+console.log(
+    '%c📧 Contact: support@orphika.io',
+    'color: #2563eb; font-size: 12px;'
+);
+console.log(
+    '%c🔒 100% Conforme RGPD - Aucun cookie utilisé',
+    'color: #94a3b8; font-size: 12px;'
+);
+
+// =========================================
+// EXPORT FONCTIONS GLOBALES
+// =========================================
+
+window.OrphikaIA = {
+    scrollToContact,
+    showModal: window.showModal,
+    closeModal: window.closeModal,
+    trackInteraction
+};
+
+console.log('✅ Orphika IA - Toutes les fonctionnalités initialisées');
