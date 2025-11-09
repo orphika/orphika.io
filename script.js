@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('🚀 Orphika IA - Site optimisé chargé');
     console.log('📧 Contact: support@orphika.io');
     console.log('🔒 Conforme RGPD - Aucun cookie');
-    ```javascript
+    
 // =========================================
 // CARROUSEL COMPARAISON
 // =========================================
