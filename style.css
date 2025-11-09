@@ -1,367 +1,4 @@
-/* === SECTION COMMENT ÇA MARCHE === */
-.how-it-works {
-    padding: 100px 5%;
-    background: var(--bg-darker);
-}
-
-.timeline {
-    max-width: 800px;
-    margin: 0 auto 60px;
-    position: relative;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 40px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: linear-gradient(180deg, var(--primary-blue), var(--primary-orange));
-}
-
-.timeline-item {
-    display: flex;
-    gap: 24px;
-    margin-bottom: 40px;
-    position: relative;
-}
-
-.timeline-item.highlight {
-    background: rgba(249, 115, 22, 0.1);
-    border: 1px solid var(--primary-orange);
-    border-radius: 16px;
-    padding: 24px;
-    margin-left: -24px;
-}
-
-.timeline-number {
-    width: 80px;
-    height: 80px;
-    min-width: 80px;
-    background: var(--gradient-primary);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: white;
-    box-shadow: var(--shadow-xl);
-    z-index: 1;
-}
-
-.timeline-item.highlight .timeline-number {
-    background: var(--gradient-cta);
-    font-size: 2rem;
-}
-
-.timeline-content {
-    flex: 1;
-    padding-top: 8px;
-}
-
-.timeline-content h3 {
-    font-size: 1.3rem;
-    margin-bottom: 12px;
-    color: var(--primary-orange);
-}
-
-.timeline-content p {
-    color: var(--text-gray);
-    line-height: 1.6;
-    margin-bottom: 12px;
-}
-
-.timeline-duration {
-    display: inline-block;
-    background: rgba(37, 99, 235, 0.2);
-    color: var(--primary-blue);
-    padding: 4px 12px;
-    border-radius: 12px;
-    font-size: 0.85rem;
-    font-weight: 600;
-}
-
-.cta-how-it-works {
-    text-align: center;
-    margin-top: 40px;
-}
-
-/* === CARROUSELS === */
-.comparison-carousel,
-.testimonials-carousel {
-    position: relative;
-    max-width: 700px;
-    margin: 0 auto;
-    overflow: hidden;
-    border-radius: 20px;
-}
-
-.comparison-track,
-.testimonials-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.comparison-slide,
-.testimonial-slide {
-    min-width: 100%;
-    padding: 20px;
-}
-
-.comparison-card {
-    background: rgba(30, 41, 59, 0.5);
-    backdrop-filter: blur(10px);
-    border: 2px solid var(--border-light);
-    border-radius: 20px;
-    padding: 40px;
-    text-align: center;
-    min-height: 400px;
-}
-
-.comparison-card.negative {
-    border-color: rgba(239, 68, 68, 0.5);
-    background: rgba(239, 68, 68, 0.05);
-}
-
-.comparison-card.positive {
-    border-color: var(--success-green);
-    background: rgba(16, 185, 129, 0.05);
-    box-shadow: 0 0 30px rgba(16, 185, 129, 0.2);
-}
-
-.comparison-card.neutral {
-    border-color: rgba(148, 163, 184, 0.3);
-}
-
-.comparison-icon {
-    font-size: 4rem;
-    margin: 20px 0;
-}
-
-.comparison-card h3 {
-    font-size: 1.75rem;
-    margin-bottom: 16px;
-}
-
-.comparison-card ul {
-    list-style: none;
-    text-align: left;
-    margin: 24px 0;
-}
-
-.comparison-card li {
-    padding: 10px 0;
-    border-bottom: 1px solid var(--border-light);
-}
-
-.comparison-result {
-    margin-top: 24px;
-    padding: 16px;
-    border-radius: 12px;
-    font-size: 1.1rem;
-}
-
-.comparison-result.negative {
-    background: rgba(239, 68, 68, 0.2);
-    color: var(--alert-red);
-}
-
-.comparison-result.positive {
-    background: rgba(16, 185, 129, 0.2);
-    color: var(--success-green);
-}
-
-.comparison-result.neutral {
-    background: rgba(148, 163, 184, 0.1);
-    color: var(--text-gray);
-}
-
-.carousel-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid var(--border-light);
-    color: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-    z-index: 10;
-}
-
-.carousel-control.prev {
-    left: 10px;
-}
-
-.carousel-control.next {
-    right: 10px;
-}
-
-.carousel-control:hover {
-    background: var(--primary-orange);
-    border-color: var(--primary-orange);
-}
-
-.carousel-indicators {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 24px;
-}
-
-.indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.indicator.active {
-    background: var(--primary-orange);
-    width: 32px;
-    border-radius: 6px;
-}
-
-/* === FAQ ACCORDÉON === */
-.faq-accordion {
-    max-width: 800px;
-    margin: 0 auto 40px;
-}
-
-.faq-accordion-item {
-    background: rgba(30, 41, 59, 0.5);
-    border: 1px solid var(--border-light);
-    border-radius: 12px;
-    margin-bottom: 12px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.faq-accordion-item:hover {
-    border-color: var(--primary-orange);
-}
-
-.faq-question {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 20px 24px;
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    text-align: left;
-    transition: all 0.3s ease;
-}
-
-.faq-question:hover {
-    background: rgba(249, 115, 22, 0.1);
-}
-
-.faq-icon {
-    font-size: 1.5rem;
-    min-width: 32px;
-}
-
-.faq-text {
-    flex: 1;
-}
-
-.faq-toggle {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-orange);
-    min-width: 24px;
-    transition: transform 0.3s ease;
-}
-
-.faq-question.active .faq-toggle {
-    transform: rotate(45deg);
-}
-
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
-    padding: 0 24px;
-}
-
-.faq-answer.active {
-    max-height: 500px;
-    padding: 0 24px 24px;
-}
-
-.faq-answer p {
-    color: var(--text-gray);
-    line-height: 1.7;
-}
-
-.faq-cta {
-    text-align: center;
-    padding: 40px;
-    background: rgba(37, 99, 235, 0.1);
-    border-radius: 16px;
-    border: 1px solid var(--primary-blue);
-}
-
-.faq-cta p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-/* === RESPONSIVE CARROUSELS === */
-@media (max-width: 768px) {
-    .timeline::before {
-        left: 20px;
-    }
-    
-    .timeline-number {
-        width: 60px;
-        height: 60px;
-        min-width: 60px;
-        font-size: 1.2rem;
-    }
-    
-    .comparison-carousel,
-    .testimonials-carousel {
-        max-width: 100%;
-    }
-    
-    .carousel-control {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-    }
-    
-    .carousel-control.prev {
-        left: 5px;
-    }
-    
-    .carousel-control.next {
-        right: 5px;
-    }
-    
-    .faq-question {
-        font-size: 1rem;
-        padding: 16px;
-    }
-    
-    .faq-icon {
-        font-size: 1.2rem;
-    }
-}
-```/* =========================================
+/* =========================================
    ORPHIKA IA - CSS OPTIMISÉ NEUROMARKETING
    Version: 2.0 (Janvier 2025)
    ========================================= */
@@ -1092,6 +729,238 @@ nav {
     color: var(--success-green);
 }
 
+/* === SECTION COMMENT ÇA MARCHE === */
+.how-it-works {
+    padding: 100px 5%;
+    background: var(--bg-darker);
+}
+
+.timeline {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 40px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--primary-blue), var(--primary-orange));
+}
+
+.timeline-item {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.timeline-item.highlight {
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid var(--primary-orange);
+    border-radius: 16px;
+    padding: 24px;
+    margin-left: -24px;
+}
+
+.timeline-number {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    box-shadow: var(--shadow-xl);
+    z-index: 1;
+}
+
+.timeline-item.highlight .timeline-number {
+    background: var(--gradient-cta);
+    font-size: 2rem;
+}
+
+.timeline-content {
+    flex: 1;
+    padding-top: 8px;
+}
+
+.timeline-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: var(--primary-orange);
+}
+
+.timeline-content p {
+    color: var(--text-gray);
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.timeline-duration {
+    display: inline-block;
+    background: rgba(37, 99, 235, 0.2);
+    color: var(--primary-blue);
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.cta-how-it-works {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* === CARROUSELS === */
+.comparison-carousel,
+.testimonials-carousel {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.comparison-track,
+.testimonials-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.comparison-slide,
+.testimonial-slide {
+    min-width: 100%;
+    padding: 20px;
+}
+
+.comparison-card {
+    background: rgba(30, 41, 59, 0.5);
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--border-light);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    min-height: 400px;
+}
+
+.comparison-card.negative {
+    border-color: rgba(239, 68, 68, 0.5);
+    background: rgba(239, 68, 68, 0.05);
+}
+
+.comparison-card.positive {
+    border-color: var(--success-green);
+    background: rgba(16, 185, 129, 0.05);
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.2);
+}
+
+.comparison-card.neutral {
+    border-color: rgba(148, 163, 184, 0.3);
+}
+
+.comparison-icon {
+    font-size: 4rem;
+    margin: 20px 0;
+}
+
+.comparison-card h3 {
+    font-size: 1.75rem;
+    margin-bottom: 16px;
+}
+
+.comparison-card ul {
+    list-style: none;
+    text-align: left;
+    margin: 24px 0;
+}
+
+.comparison-card li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.comparison-result {
+    margin-top: 24px;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+}
+
+.comparison-result.negative {
+    background: rgba(239, 68, 68, 0.2);
+    color: var(--alert-red);
+}
+
+.comparison-result.positive {
+    background: rgba(16, 185, 129, 0.2);
+    color: var(--success-green);
+}
+
+.comparison-result.neutral {
+    background: rgba(148, 163, 184, 0.1);
+    color: var(--text-gray);
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-light);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    z-index: 10;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+.carousel-control:hover {
+    background: var(--primary-orange);
+    border-color: var(--primary-orange);
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background: var(--primary-orange);
+    width: 32px;
+    border-radius: 6px;
+}
+
 /* === TÉMOIGNAGES === */
 .pourqui-optimized {
     padding: 100px 5%;
@@ -1382,35 +1251,99 @@ nav {
     margin: 0 auto;
 }
 
-/* === FAQ === */
+/* === FAQ ACCORDÉON === */
 .faq-section {
     padding: 100px 5%;
     background: rgba(30, 41, 59, 0.3);
 }
 
-.faq-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
+.faq-accordion {
+    max-width: 800px;
+    margin: 0 auto 40px;
 }
 
-.faq-item {
+.faq-accordion-item {
     background: rgba(30, 41, 59, 0.5);
     border: 1px solid var(--border-light);
-    border-radius: 16px;
-    padding: 28px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    overflow: hidden;
     transition: all 0.3s ease;
 }
 
-.faq-item:hover {
-    border-color: var(--primary-blue);
-    transform: translateY(-4px);
+.faq-accordion-item:hover {
+    border-color: var(--primary-orange);
 }
 
-.faq-item h3 {
+.faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 24px;
+    background: transparent;
+    border: none;
+    color: white;
     font-size: 1.1rem;
-    margin-bottom: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+    background: rgba(249, 115, 22, 0.1);
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    min-width: 32px;
+}
+
+.faq-text {
+    flex: 1;
+}
+
+.faq-toggle {
+    font-size: 1.5rem;
+    font-weight: 700;
     color: var(--primary-orange);
+    min-width: 24px;
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active .faq-toggle {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 24px;
+}
+
+.faq-answer.active {
+    max-height: 500px;
+    padding: 0 24px 24px;
+}
+
+.faq-answer p {
+    color: var(--text-gray);
+    line-height: 1.7;
+}
+
+.faq-cta {
+    text-align: center;
+    padding: 40px;
+    background: rgba(37, 99, 235, 0.1);
+    border-radius: 16px;
+    border: 1px solid var(--primary-blue);
+}
+
+.faq-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
 }
 
 /* === CONTACT FINAL === */
@@ -1809,6 +1742,60 @@ nav {
     
     .footer-links {
         grid-template-columns: 1fr;
+    }
+    
+    /* Responsive pour les nouvelles sections */
+    .timeline::before {
+        left: 20px;
+    }
+    
+    .timeline-number {
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+        font-size: 1.2rem;
+    }
+    
+    .timeline-item.highlight {
+        margin-left: 0;
+        padding: 20px;
+    }
+    
+    .comparison-carousel,
+    .testimonials-carousel {
+        max-width: 100%;
+    }
+    
+    .carousel-control {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .carousel-control.prev {
+        left: 5px;
+    }
+    
+    .carousel-control.next {
+        right: 5px;
+    }
+    
+    .comparison-card {
+        padding: 24px;
+        min-height: 300px;
+    }
+    
+    .faq-question {
+        font-size: 1rem;
+        padding: 16px;
+    }
+    
+    .faq-icon {
+        font-size: 1.2rem;
+    }
+    
+    .faq-cta {
+        padding: 24px;
     }
 }
 
