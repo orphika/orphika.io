@@ -157,6 +157,8 @@ nav {
     opacity: 1 !important;
     visibility: visible !important;
     max-width: 100% !important;
+    position: relative !important;
+    z-index: 100 !important;
 }
 
 .logo-text {
@@ -1698,6 +1700,29 @@ nav {
     
     .nav-menu {
         display: none;
+    }
+    
+    /* Force l'affichage du logo sur mobile */
+    .logo {
+        height: 40px !important;
+        display: block !important;
+    }
+    
+    .logo-text {
+        display: flex !important;
+    }
+    
+    .logo-main {
+        font-size: 1.2rem;
+    }
+    
+    .logo-sub {
+        font-size: 0.6rem;
+    }
+    
+    .cta-button-nav {
+        padding: 10px 16px;
+        font-size: 0.8rem;
     }
     
     .hero-title {
