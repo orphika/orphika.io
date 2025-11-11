@@ -1694,24 +1694,27 @@ nav {
 @media (max-width: 768px) {
     .trust-bar {
         flex-wrap: wrap;
-        gap: 8px;
-        font-size: 0.7rem;
-        padding: 6px 12px;
-        min-height: 36px;
+        gap: 6px;
+        font-size: 0.65rem;
+        padding: 4px 8px;
+        min-height: 30px;
+        justify-content: center;
     }
     
     .trust-item {
-        gap: 4px;
-        font-size: 0.7rem;
+        gap: 3px;
+        font-size: 0.65rem;
+        white-space: nowrap;
     }
     
     .trust-icon {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
     
     /* Ajuster le header pour qu'il soit sous la trust bar */
     .glass-header {
-        top: 36px;
+        top: 30px;
+        padding: 8px 0;
     }
     
     .nav-menu {
@@ -1720,8 +1723,12 @@ nav {
     
     /* Force l'affichage du logo sur mobile */
     .logo {
-        height: 36px !important;
+        height: 32px !important;
         display: block !important;
+    }
+    
+    .logo-container {
+        gap: 8px;
     }
     
     .logo-text {
@@ -1729,30 +1736,32 @@ nav {
     }
     
     .logo-main {
-        font-size: 1rem;
-    }
-    
-    .logo-sub {
-        font-size: 0.55rem;
-    }
-    
-    .cta-button-nav {
-        padding: 8px 14px;
-        font-size: 0.75rem;
-        gap: 4px;
-    }
-    
-    .cta-icon {
         font-size: 0.9rem;
     }
     
+    .logo-sub {
+        font-size: 0.5rem;
+    }
+    
+    .cta-button-nav {
+        padding: 6px 10px;
+        font-size: 0.7rem;
+        gap: 3px;
+    }
+    
+    .cta-icon {
+        font-size: 0.85rem;
+    }
+    
     nav {
-        padding: 10px 4%;
+        padding: 6px 3%;
+        min-height: 48px;
+        align-items: center;
     }
     
     /* Ajuster le padding du hero pour compenser les headers */
     .hero-optimized {
-        padding-top: 120px;
+        padding-top: 100px;
     }
     
     .hero-title {
