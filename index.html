@@ -700,3 +700,315 @@
                     
                     <div class="faq-accordion-item">
                         <button class="faq-question" role="tab" aria
+                    <div class="faq-accordion-item">
+                        <button class="faq-question" role="tab" aria-expanded="false" aria-controls="faq7" onclick="toggleFAQ(this)">
+                            <span class="faq-icon">🌍</span>
+                            <span class="faq-text">Vous êtes basés en Algérie, c'est un problème ?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer" role="tabpanel" id="faq7">
+                            <p><strong>Non, au contraire !</strong> Nous travaillons aux heures françaises (même fuseau horaire UTC+1). Nos clients sont en Europe francophone. Paiement sécurisé en euros via Wise. Et nos tarifs sont 30-40% plus compétitifs grâce à nos coûts optimisés.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-accordion-item">
+                        <button class="faq-question" role="tab" aria-expanded="false" aria-controls="faq8" onclick="toggleFAQ(this)">
+                            <span class="faq-icon">💬</span>
+                            <span class="faq-text">L'assistant comprend vraiment le français ?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer" role="tabpanel" id="faq8">
+                            <p><strong>Oui, parfaitement.</strong> L'IA est entraînée spécifiquement en français et comprend le langage naturel, les expressions courantes et même l'argot. Elle s'adapte au ton de votre métier (formel pour avocat, convivial pour restaurant...).</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-cta">
+                    <p><strong>Vous avez d'autres questions ?</strong></p>
+                    <button class="cta-secondary" onclick="scrollToContact()">
+                        <span class="cta-icon">💬</span>
+                        Parlons-en par WhatsApp
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact CTA Final -->
+        <section id="contact" class="contact-final" role="region" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="cta-final-block">
+                    <h2 id="contact-title">Prêt à ne plus manquer aucun client ?</h2>
+                    <p>Réservez votre démo gratuite maintenant (30 minutes, sans engagement)</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-priority">
+                            <h3>📧 Formulaire express (réponse en 24h)</h3>
+                            <form id="simpleContactForm" class="inline-form">
+                                <div class="form-row">
+                                    <input type="text" name="name" placeholder="Votre nom" required aria-required="true">
+                                    <input type="text" name="business" placeholder="Votre métier (ex: plombier)" required aria-required="true">
+                                </div>
+                                <div class="form-row">
+                                    <input type="email" name="email" placeholder="Votre email" required aria-required="true">
+                                    <input type="tel" name="phone" placeholder="Téléphone (optionnel)">
+                                </div>
+                                <div class="form-consent-inline">
+                                    <input type="checkbox" id="consent" required aria-required="true">
+                                    <label for="consent">
+                                        J'accepte d'être recontacté pour organiser ma démo gratuite
+                                    </label>
+                                </div>
+                                <button type="submit" class="cta-submit">
+                                    <span class="btn-text">RÉSERVER MA DÉMO GRATUITE</span>
+                                    <span class="btn-arrow">→</span>
+                                </button>
+                            </form>
+                            <div id="simpleFormMessage" class="form-message"></div>
+                        </div>
+                        
+                        <div class="contact-alternative">
+                            <h3>Ou contactez-nous directement</h3>
+                            <div class="contact-direct">
+                                <a href="mailto:support@orphika.io" class="contact-btn">
+                                    <span class="contact-icon">📧</span>
+                                    <span>support@orphika.io</span>
+                                </a>
+                            </div>
+                            <div class="contact-badges">
+                                <div class="mini-badge">✓ Réponse < 24h</div>
+                                <div class="mini-badge">✓ Sans engagement</div>
+                                <div class="mini-badge">✓ RGPD</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Optimisé -->
+    <footer class="footer-optimized" role="contentinfo">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-container">
+                    <img src="logo.png" alt="Orphika IA" class="logo">
+                    <div class="logo-text">
+                        <span class="logo-main">ORPHIKA</span>
+                        <span class="logo-sub">IA AGENCY</span>
+                    </div>
+                </div>
+                <p>Assistant IA personnalisé pour artisans et petites entreprises</p>
+                <p><strong>Représentant :</strong> M. Sofiane CHACHOUR</p>
+                <p><strong>Statut :</strong> Entrepreneur individuel (personne physique)</p>
+                <div class="footer-trust">
+                    <span class="trust-badge">🔒 Conforme RGPD</span>
+                    <span class="trust-badge">🇫🇷 Service en français</span>
+                    <span class="trust-badge">🍪 Aucun cookie</span>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Navigation</h4>
+                    <a href="#accueil">Accueil</a>
+                    <a href="#solution">Comment ça marche</a>
+                    <a href="#pourqui">Témoignages</a>
+                    <a href="#tarifs">Tarifs</a>
+                </div>
+                <div class="link-group">
+                    <h4>Légal</h4>
+                    <a href="#" onclick="showModal('mentions')">Mentions Légales</a>
+                    <a href="#" onclick="showModal('confidentialite')">Politique de Confidentialité</a>
+                    <a href="#" onclick="showModal('cgu')">Conditions Générales de Vente</a>
+                </div>
+                <div class="link-group">
+                    <h4>Contact</h4>
+                    <a href="mailto:support@orphika.io">support@orphika.io</a>
+                    <a href="#contact">Demander une démo</a>
+                    <p style="margin-top: 10px; font-size: 0.9em;">
+                        <strong>Adresse :</strong><br>
+                        Bâtiment 22, Cité AADL Moukhtar ZARHOUNI<br>
+                        El Mohammadia, Alger, Algérie
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Orphika IA Agency - M. Sofiane CHACHOUR. Tous droits réservés.</p>
+            <p><small>Entrepreneur individuel • Statut personne physique • TVA non applicable (prestataire hors UE)</small></p>
+            <p><small>Ce site n'utilise aucun cookie • Hébergé par GitHub Pages • Conforme RGPD</small></p>
+        </div>
+    </div>
+</footer>
+
+    <!-- Modals MIS À JOUR avec vos nouveaux contenus complets -->
+<div id="mentionsModal" class="modal">
+    <div class="modal-content glass-card">
+        <span class="close-modal" onclick="closeModal('mentions')" aria-label="Fermer">&times;</span>
+        <h3>Mentions Légales</h3>
+        <div class="modal-body">
+            <!-- CONTENU COMPLET DE VOS MENTIONS LÉGALES -->
+            <div class="warning-box">
+                <strong>⚠️ Transparence - Startup en phase de lancement</strong>
+                <p style="margin-top: 10px;">
+                    Orphika IA Agency est actuellement en phase MVP (Minimum Viable Product). 
+                    Nous travaillons activement à notre mise en conformité RGPD complète. 
+                    <strong>Désignation d'un représentant RGPD en France prévue pour mars 2025.</strong>
+                </p>
+            </div>
+
+            <h2>1. Identification du Prestataire</h2>
+            
+            <div class="contact-info">
+                <p><strong>Nom commercial :</strong> Orphika IA Agency</p>
+                <p><strong>Représentant :</strong> M. Sofiane CHACHOUR</p>
+                <p><strong>Statut juridique :</strong> Entrepreneur individuel (personne physique)</p>
+                <p><strong>Adresse du siège social :</strong><br>
+                Bâtiment 22, Cité AADL Moukhtar ZARHOUNI<br>
+                El Mohammadia, Alger, Algérie</p>
+                <p><strong>Email :</strong> <a href="mailto:contact@orphika.io">contact@orphika.io</a></p>
+            </div>
+
+            <h2>2. Protection des Données Personnelles (RGPD)</h2>
+
+            <h3>2.1 Phase Actuelle</h3>
+            <p>
+                Orphika IA Agency est une startup en phase de lancement. Nous prenons la protection 
+                de vos données très au sérieux et mettons en œuvre les meilleures pratiques de sécurité 
+                dès maintenant.
+            </p>
+
+            <h3>2.2 Contact Protection des Données</h3>
+            <div class="contact-info">
+                <p><strong>Email dédié protection des données :</strong> <a href="mailto:dpo@orphika.io">dpo@orphika.io</a></p>
+                <p><strong>Délai de réponse garanti :</strong> 30 jours maximum</p>
+            </div>
+
+            <h3>2.3 Représentant RGPD dans l'Union Européenne</h3>
+            <div class="info-box">
+                <p>
+                    Conformément à l'article 27 du RGPD, les entreprises établies hors UE doivent 
+                    désigner un représentant dans l'Union Européenne.
+                </p>
+                <p style="margin-top: 10px;">
+                    <strong>Statut actuel :</strong> En cours de désignation<br>
+                    <strong>Date prévue :</strong> 31 mars 2025<br>
+                    <strong>Contact temporaire :</strong> <a href="mailto:dpo@orphika.io">dpo@orphika.io</a>
+                </p>
+            </div>
+
+            <p>
+                En attendant la désignation officielle de notre représentant RGPD, toute question 
+                relative à la protection de vos données personnelles peut être adressée à 
+                <a href="mailto:dpo@orphika.io">dpo@orphika.io</a>.
+            </p>
+
+            <!-- ... CONTINUER AVEC TOUT LE CONTENU DE VOS MENTIONS LÉGALES ... -->
+            
+            <div class="footer">
+                <p><strong>Dernière mise à jour :</strong> Janvier 2025</p>
+                <p><strong>Prochaine mise à jour prévue :</strong> Mars 2025 (désignation représentant RGPD UE)</p>
+                <p>© 2025 Orphika IA Agency - Tous droits réservés</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div id="confidentialiteModal" class="modal">
+    <div class="modal-content glass-card">
+        <span class="close-modal" onclick="closeModal('confidentialite')" aria-label="Fermer">&times;</span>
+        <h3>Politique de Confidentialité (RGPD)</h3>
+        <div class="modal-body">
+            <!-- CONTENU COMPLET DE VOTRE POLITIQUE DE CONFIDENTIALITÉ -->
+            <div class="warning-box">
+                <strong>⚠️ Transparence - Startup en phase de lancement</strong>
+                <p style="margin-top: 10px;">
+                    Orphika IA Agency est actuellement en phase MVP. Nous travaillons activement à 
+                    notre mise en conformité RGPD complète. <strong>Désignation d'un représentant 
+                    RGPD en France prévue pour mars 2025.</strong>
+                </p>
+                <p style="margin-top: 10px;">
+                    En attendant, nous mettons en œuvre toutes les mesures de sécurité appropriées 
+                    pour protéger vos données et respectons vos droits RGPD.
+                </p>
+            </div>
+
+            <p><strong>Dernière mise à jour :</strong> Janvier 2025</p>
+
+            <h2>1. Responsable du Traitement</h2>
+            
+            <div class="contact-info">
+                <p><strong>Orphika IA Agency</strong></p>
+                <p>Représenté par M. Sofiane CHACHOUR</p>
+                <p>Bâtiment 22, Cité AADL Moukhtar ZARHOUNI, El Mohammadia, Alger, Algérie</p>
+                <p><strong>Email :</strong> <a href="mailto:contact@orphika.io">contact@orphika.io</a></p>
+            </div>
+
+            <h3>1.1 Délégué à la Protection des Données (DPO)</h3>
+            <div class="contact-info">
+                <p><strong>Email :</strong> <a href="mailto:dpo@orphika.io">dpo@orphika.io</a></p>
+                <p><strong>Délai de réponse :</strong> 30 jours maximum</p>
+            </div>
+
+            <!-- ... CONTINUER AVEC TOUT LE CONTENU DE VOTRE POLITIQUE DE CONFIDENTIALITÉ ... -->
+            
+            <div class="footer">
+                <p><strong>Conforme RGPD</strong> (Règlement UE 2016/679)</p>
+                <p><strong>Dernière mise à jour :</strong> Janvier 2025</p>
+                <p>© 2025 Orphika IA Agency - Tous droits réservés</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div id="cguModal" class="modal">
+    <div class="modal-content glass-card">
+        <span class="close-modal" onclick="closeModal('cgu')" aria-label="Fermer">&times;</span>
+        <h3>Conditions Générales de Vente (CGV)</h3>
+        <div class="modal-body">
+            <!-- CONTENU COMPLET DE VOS CGV -->
+            <p><strong>Dernière mise à jour :</strong> Janvier 2025</p>
+
+            <h2>1. Identification du Prestataire</h2>
+            
+            <div class="contact-info">
+                <p><strong>Orphika IA Agency</strong></p>
+                <p>Représenté par M. Sofiane CHACHOUR</p>
+                <p>Entrepreneur individuel (personne physique)</p>
+                <p>Adresse : Bâtiment 22, Cité AADL Moukhtar ZARHOUNI, El Mohammadia, Alger, Algérie</p>
+                <p>Email : <a href="mailto:contact@orphika.io">contact@orphika.io</a></p>
+                <p>Support : <a href="mailto:support@orphika.io">support@orphika.io</a></p>
+            </div>
+
+            <h2>2. Services Proposés</h2>
+
+            <p>
+                Développement d'assistants IA conversationnels personnalisés (chatbots vocaux et textuels) 
+                pour petites et moyennes entreprises, incluant :
+            </p>
+
+            <ul>
+                <li>Conception et configuration de l'assistant IA personnalisé</li>
+                <li>Intégration avec calendriers (Google Calendar), emails (Gmail) et outils métiers</li>
+                <li>Formation du modèle IA avec les données spécifiques du client</li>
+                <li>Mise en production sur les canaux choisis (téléphone, SMS, web, WhatsApp, etc.)</li>
+                <li>Maintenance et amélioration continue du service</li>
+            </ul>
+
+            <!-- ... CONTINUER AVEC TOUT LE CONTENU DE VOS CGV ... -->
+            
+            <div class="footer">
+                <p><strong>Dernière mise à jour :</strong> Janvier 2025</p>
+                <p><strong>Version :</strong> 1.0</p>
+                <p><strong>Conforme RGPD</strong> (Règlement UE 2016/679)</p>
+                <p>© 2025 Orphika IA Agency - Tous droits réservés</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
