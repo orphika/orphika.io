@@ -852,7 +852,7 @@
                 <p style="margin-top: 10px;">
                     Orphika IA Agency est actuellement en phase MVP (Minimum Viable Product). 
                     Nous travaillons activement à notre mise en conformité RGPD complète. 
-                    <strong>Désignation d'un représentant RGPD en France prévue pour 15 mars 2026.</strong>
+                    <strong>Désignation d'un représentant RGPD en France prévue pour mars 2025.</strong>
                 </p>
             </div>
 
@@ -891,7 +891,7 @@
                 </p>
                 <p style="margin-top: 10px;">
                     <strong>Statut actuel :</strong> En cours de désignation<br>
-                    <strong>Date prévue :</strong> 31 15 mars 2026<br>
+                    <strong>Date prévue :</strong> 31 mars 2025<br>
                     <strong>Contact temporaire :</strong> <a href="mailto:dpo@orphika.io">dpo@orphika.io</a>
                 </p>
             </div>
@@ -1004,15 +1004,15 @@
             </ul>
 
             <div class="footer">
-                <p><strong>Dernière mise à jour :</strong> Novembre 2026</p>
-                <p><strong>Prochaine mise à jour prévue :</strong> 15 mars 2026 (désignation représentant RGPD UE)</p>
+                <p><strong>Dernière mise à jour :</strong> Janvier 2025</p>
+                <p><strong>Prochaine mise à jour prévue :</strong> Mars 2025 (désignation représentant RGPD UE)</p>
                 <p>© 2025 Orphika IA Agency - Tous droits réservés</p>
             </div>
         </div>
     </div>
 </div>
 
-    <div id="confidentialiteModal" class="modal">
+<div id="confidentialiteModal" class="modal">
     <div class="modal-content glass-card">
         <span class="close-modal" onclick="closeModal('confidentialite')" aria-label="Fermer">&times;</span>
         <h3>Politique de Confidentialité (RGPD)</h3>
@@ -1022,7 +1022,7 @@
                 <p style="margin-top: 10px;">
                     Orphika IA Agency est actuellement en phase MVP. Nous travaillons activement à 
                     notre mise en conformité RGPD complète. <strong>Désignation d'un représentant 
-                    RGPD en France prévue pour 15 mars 2026.</strong>
+                    RGPD en France prévue pour mars 2025.</strong>
                 </p>
                 <p style="margin-top: 10px;">
                     En attendant, nous mettons en œuvre toutes les mesures de sécurité appropriées 
@@ -1030,7 +1030,7 @@
                 </p>
             </div>
 
-            <p><strong>Dernière mise à jour :</strong> Novembre 2026</p>
+            <p><strong>Dernière mise à jour :</strong> Janvier 2025</p>
 
             <h2>1. Responsable du Traitement</h2>
             
@@ -1050,7 +1050,7 @@
             <h3>1.2 Représentant RGPD dans l'Union Européenne</h3>
             <div class="info-box">
                 <p><strong>Statut actuel :</strong> En cours de désignation</p>
-                <p><strong>Date prévue :</strong> 31 15 mars 2026</p>
+                <p><strong>Date prévue :</strong> 31 mars 2025</p>
                 <p><strong>Contact temporaire :</strong> <a href="mailto:dpo@orphika.io">dpo@orphika.io</a></p>
             </div>
 
@@ -1115,23 +1115,323 @@
             <p><strong>Vos droits :</strong> Contactez directement l'entreprise qui utilise l'assistant 
             IA Orphika. Si nécessaire, contactez notre DPO : <a href="mailto:dpo@orphika.io">dpo@orphika.io</a></p>
 
-            <!-- CONTINUER AVEC LE RESTE DE VOTRE POLITIQUE DE CONFIDENTIALITÉ... -->
+            <h2>3. Durées de Conservation</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type de données</th>
+                        <th>Durée de conservation</th>
+                        <th>Justification</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Prospects (non-clients)</strong></td>
+                        <td>3 ans maximum</td>
+                        <td>Intérêt légitime commercial</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Clients actifs Orphika</strong></td>
+                        <td>Durée du contrat + 3 ans</td>
+                        <td>Gestion relation client + prescriptions</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Factures et comptabilité</strong></td>
+                        <td>10 ans</td>
+                        <td>Obligation légale (Code de commerce)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Conversations clients finaux</strong></td>
+                        <td>3 mois à 3 ans (selon client)</td>
+                        <td>Définie par notre client</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Logs techniques</strong></td>
+                        <td>12 mois</td>
+                        <td>Sécurité et diagnostic</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                À l'issue de ces durées, les données sont soit supprimées définitivement, soit 
+                anonymisées de façon irréversible.
+            </p>
+
+            <h2>4. Destinataires des Données</h2>
+
+            <h3>4.1 Sous-traitants d'Orphika (avec DPA conformes RGPD)</h3>
+
+            <p><strong>Hébergement et infrastructure :</strong></p>
+            <ul>
+                <li><strong>nhost</strong> (Allemagne, UE) - Base de données PostgreSQL</li>
+                <li><strong>Render</strong> (Europe) - Hébergement serveurs applicatifs</li>
+            </ul>
+
+            <p><strong>Services IA et télécommunications :</strong></p>
+            <ul>
+                <li><strong>OpenAI</strong> (USA) - Traitement du langage naturel - DPA signé</li>
+                <li><strong>Twilio</strong> (USA) - Téléphonie, SMS et WhatsApp - DPA signé</li>
+                <li><strong>Vapi.ai</strong> (USA) - Voix IA temps réel - DPA signé</li>
+                <li><strong>ElevenLabs</strong> (USA) - Synthèse vocale - DPA signé</li>
+            </ul>
+
+            <p><strong>Paiements :</strong></p>
+            <ul>
+                <li><strong>Stripe</strong> (USA/Irlande) - Traitement des paiements - DPA automatique</li>
+            </ul>
+
+            <p><strong>Google Workspace (via comptes clients) :</strong></p>
+            <ul>
+                <li><strong>Google LLC</strong> (USA/UE) - Calendar, Gmail, Drive - DPA Google Workspace</li>
+            </ul>
+
+            <h3>4.2 Autorités et tiers autorisés</h3>
+            <p>
+                En cas d'obligation légale uniquement : Autorités fiscales, autorités judiciaires, 
+                CNIL ou autres autorités de protection des données.
+            </p>
+
+            <h2>5. Transferts Internationaux de Données</h2>
+
+            <p>
+                Certains de nos sous-traitants sont situés hors de l'Union Européenne (États-Unis).
+            </p>
+
+            <div class="success-box">
+                <p><strong>✅ Garanties mises en place (Article 46 RGPD) :</strong></p>
+                <ul style="margin-top: 10px;">
+                    <li>Clauses contractuelles types (CCT) de la Commission Européenne</li>
+                    <li>Data Processing Agreements (DPA) signés avec chaque sous-traitant</li>
+                    <li>Évaluation d'Impact relative au Transfert (TIA) post-Schrems II</li>
+                    <li>Mesures supplémentaires : Chiffrement des données en transit et au repos</li>
+                </ul>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sous-traitant</th>
+                        <th>Pays</th>
+                        <th>Garantie</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>OpenAI</td>
+                        <td>USA</td>
+                        <td>CCT + DPA</td>
+                    </tr>
+                    <tr>
+                        <td>Twilio</td>
+                        <td>USA</td>
+                        <td>CCT + DPA</td>
+                    </tr>
+                    <tr>
+                        <td>Vapi.ai</td>
+                        <td>USA</td>
+                        <td>CCT + DPA</td>
+                    </tr>
+                    <tr>
+                        <td>ElevenLabs</td>
+                        <td>USA</td>
+                        <td>CCT + DPA</td>
+                    </tr>
+                    <tr>
+                        <td>Stripe</td>
+                        <td>USA/Irlande</td>
+                        <td>DPA + Décision d'adéquation partielle</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>6. Vos Droits (RGPD)</h2>
+
+            <p>
+                Conformément aux articles 15 à 22 du RGPD, vous disposez des droits suivants :
+            </p>
+
+            <h3>📖 Droit d'accès (Article 15)</h3>
+            <p>
+                Obtenir une copie de vos données personnelles et des informations sur leur traitement.
+            </p>
+
+            <h3>✏️ Droit de rectification (Article 16)</h3>
+            <p>
+                Corriger des données inexactes ou incomplètes.
+            </p>
+
+            <h3>🗑️ Droit à l'effacement / "Droit à l'oubli" (Article 17)</h3>
+            <p>
+                Demander la suppression de vos données dans certaines conditions.
+            </p>
+
+            <h3>⏸️ Droit à la limitation du traitement (Article 18)</h3>
+            <p>
+                Demander le gel temporaire du traitement de vos données.
+            </p>
+
+            <h3>📦 Droit à la portabilité (Article 20)</h3>
+            <p>
+                Recevoir vos données dans un format structuré (JSON) et les transmettre à un autre 
+                responsable.
+            </p>
+
+            <h3>🚫 Droit d'opposition (Article 21)</h3>
+            <p>
+                Vous opposer au traitement de vos données pour des raisons tenant à votre situation 
+                particulière.
+            </p>
+
+            <h3>🤖 Droit de ne pas faire l'objet d'une décision automatisée (Article 22)</h3>
+            <p>
+                Ne pas être soumis à une décision fondée exclusivement sur un traitement automatisé 
+                produisant des effets juridiques.
+            </p>
+
+            <h2>7. Exercice de Vos Droits</h2>
+
+            <div class="info-box">
+                <p><strong>Pour exercer vos droits concernant VOS données sur Orphika.io :</strong></p>
+                <p style="margin-top: 15px;">
+                    📧 <strong>Email :</strong> <a href="mailto:dpo@orphika.io">dpo@orphika.io</a> 
+                    ou <a href="mailto:support@orphika.io">support@orphika.io</a>
+                </p>
+                <p>⏱️ <strong>Délai de réponse :</strong> 1 mois maximum (extensible de 2 mois si demande complexe)</p>
+                <p>🆔 <strong>Pièce justificative :</strong> Copie d'une pièce d'identité pour vérifier votre identité</p>
+            </div>
+
+            <p>
+                <strong>Pour les données collectées par un assistant IA Orphika :</strong><br>
+                Contactez directement l'entreprise qui utilise l'assistant (le responsable du traitement).
+            </p>
+
+            <h2>8. Sécurité des Données</h2>
+
+            <p>
+                Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour 
+                protéger vos données :
+            </p>
+
+            <div class="success-box">
+                <p><strong>✅ Mesures techniques :</strong></p>
+                <ul style="margin-top: 10px;">
+                    <li>Chiffrement HTTPS (TLS 1.3) sur tous les sites</li>
+                    <li>Chiffrement des données sensibles au repos (tokens d'accès)</li>
+                    <li>Contrôle d'accès basé sur les rôles (RBAC)</li>
+                    <li>Authentification forte (2FA pour accès administrateur)</li>
+                    <li>Logs d'audit et surveillance continue</li>
+                    <li>Sauvegardes quotidiennes chiffrées</li>
+                </ul>
+
+                <p style="margin-top: 15px;"><strong>✅ Mesures organisationnelles :</strong></p>
+                <ul style="margin-top: 10px;">
+                    <li>Accès aux données limité au strict nécessaire</li>
+                    <li>Clauses de confidentialité dans les contrats</li>
+                    <li>Formation RGPD du personnel</li>
+                    <li>Procédures de notification de violation de données (&lt;72h à la CNIL)</li>
+                    <li>Tests de sécurité réguliers</li>
+                </ul>
+            </div>
+
+            <h2>9. Cookies et Traceurs</h2>
+
+            <p>
+                <strong>Aucun cookie n'est utilisé sur le site Orphika.io</strong> à l'exception de 
+                cookies techniques strictement nécessaires au fonctionnement (session, sécurité).
+            </p>
+
+            <p>
+                Aucun cookie publicitaire, analytique ou de tracking tiers n'est déployé sans votre 
+                consentement explicite.
+            </p>
+
+            <h2>10. Notification de Violation de Données</h2>
+
+            <p>
+                En cas de violation de données personnelles susceptible d'engendrer un risque pour 
+                vos droits et libertés :
+            </p>
+
+            <ul>
+                <li>✅ Notification à la <strong>CNIL sous 72 heures</strong> (Article 33 RGPD)</li>
+                <li>✅ Notification aux <strong>personnes concernées sans délai</strong> si risque élevé (Article 34 RGPD)</li>
+                <li>✅ Documentation de l'incident dans notre registre interne</li>
+            </ul>
+
+            <p>
+                <strong>Contact en cas de fuite de données :</strong> 
+                <a href="mailto:dpo@orphika.io">dpo@orphika.io</a>
+            </p>
+
+            <h2>11. Réclamation auprès de l'Autorité de Contrôle</h2>
+
+            <p>
+                Si vous estimez que vos droits ne sont pas respectés, vous pouvez introduire une 
+                réclamation auprès de :
+            </p>
+
+            <div class="info-box">
+                <p><strong>🇫🇷 Pour les résidents français :</strong></p>
+                <p style="margin-top: 10px;">
+                    <strong>CNIL</strong> (Commission Nationale de l'Informatique et des Libertés)<br>
+                    3 Place de Fontenoy - TSA 80715<br>
+                    75334 PARIS CEDEX 07<br>
+                    Téléphone : +33 1 53 73 22 22<br>
+                    Site web : <a href="https://www.cnil.fr" target="_blank">https://www.cnil.fr</a><br>
+                    Formulaire en ligne : <a href="https://www.cnil.fr/fr/plaintes" target="_blank">https://www.cnil.fr/fr/plaintes</a>
+                </p>
+
+                <p style="margin-top: 15px;"><strong>🇪🇺 Pour les autres résidents européens :</strong></p>
+                <p style="margin-top: 10px;">
+                    Contactez l'autorité de protection des données de votre pays :<br>
+                    <a href="https://edpb.europa.eu/about-edpb/board/members_fr" target="_blank">https://edpb.europa.eu/about-edpb/board/members_fr</a>
+                </p>
+            </div>
+
+            <h2>12. Modifications de la Politique</h2>
+
+            <p>
+                Cette politique de confidentialité peut être modifiée pour refléter les évolutions 
+                de nos pratiques ou les changements légaux.
+            </p>
+
+            <p>
+                <strong>Version actuelle :</strong> Janvier 2025<br>
+                <strong>Prochaine révision prévue :</strong> Mars 2025 (désignation représentant RGPD)<br>
+                <strong>Historique des modifications :</strong> Disponible sur demande à 
+                <a href="mailto:dpo@orphika.io">dpo@orphika.io</a>
+            </p>
+
+            <p>
+                En cas de modification substantielle, vous serez informé par email (clients actifs) 
+                ou via une notification sur le site (prospects).
+            </p>
+
+            <h2>13. Contact</h2>
+
+            <div class="contact-info">
+                <p><strong>Questions sur la protection de vos données :</strong></p>
+                <p>📧 <a href="mailto:dpo@orphika.io">dpo@orphika.io</a></p>
+                <p>📧 <a href="mailto:support@orphika.io">support@orphika.io</a></p>
+            </div>
 
             <div class="footer">
                 <p><strong>Conforme RGPD</strong> (Règlement UE 2016/679)</p>
-                <p><strong>Dernière mise à jour :</strong> Novembre 2026</p>
+                <p><strong>Dernière mise à jour :</strong> Janvier 2025</p>
                 <p>© 2025 Orphika IA Agency - Tous droits réservés</p>
             </div>
         </div>
     </div>
 </div>
 
-    <div id="cguModal" class="modal">
+<div id="cguModal" class="modal">
     <div class="modal-content glass-card">
         <span class="close-modal" onclick="closeModal('cgu')" aria-label="Fermer">&times;</span>
         <h3>Conditions Générales de Vente (CGV)</h3>
         <div class="modal-body">
-            <p><strong>Dernière mise à jour :</strong> Novembre 2026</p>
+            <p><strong>Dernière mise à jour :</strong> Janvier 2025</p>
 
             <h2>1. Identification du Prestataire</h2>
             
@@ -1159,10 +1459,432 @@
                 <li>Maintenance et amélioration continue du service</li>
             </ul>
 
-            <!-- CONTINUER AVEC TOUT LE CONTENU DE VOS CGV COMPLÈTES... -->
+            <h2>3. Tarifs</h2>
+
+            <h3>3.1 Frais d'Installation (Setup)</h3>
+            <p>
+                <strong>De 500 € à 4 000 €</strong> selon la complexité du projet :
+            </p>
+            <ul>
+                <li>Configuration IA personnalisée selon le métier du client</li>
+                <li>Intégration des canaux de communication choisis</li>
+                <li>Connexion Google Workspace (Calendar, Gmail, Drive)</li>
+                <li>Formation initiale et tests</li>
+            </ul>
+
+            <h3>3.2 Maintenance Mensuelle</h3>
+            <p>
+                <strong>De 100 € à 700 €</strong> selon la formule choisie :
+            </p>
+            <ul>
+                <li><strong>Essentiel (100-200 €/mois) :</strong> 1-2 canaux, support par email</li>
+                <li><strong>Business (300-500 €/mois) :</strong> 3-5 canaux, support prioritaire</li>
+                <li><strong>Enterprise (600-700 €/mois) :</strong> Tous canaux, support dédié, SLA garanti</li>
+            </ul>
+
+            <p>
+                Les tarifs exacts sont définis dans le <strong>devis personnalisé</strong> envoyé 
+                avant toute commande.
+            </p>
+
+            <h3>3.3 TVA - Autoliquidation</h3>
+            <div class="info-box">
+                <p>
+                    Le prestataire étant établi hors Union Européenne (Algérie), <strong>la TVA n'est 
+                    pas facturée</strong>.
+                </p>
+                <p style="margin-top: 15px;">
+                    <strong>Pour les clients professionnels européens (B2B) :</strong><br>
+                    Mécanisme d'<strong>autoliquidation de la TVA</strong> par le client conformément à :
+                </p>
+                <ul style="margin-top: 10px;">
+                    <li>France : Article 283-2 du Code Général des Impôts</li>
+                    <li>Union Européenne : Article 196 de la Directive TVA 2006/112/CE</li>
+                </ul>
+                <p style="margin-top: 10px;">
+                    Le client mentionne sur sa déclaration de TVA : "Autoliquidation - Article 283-2 CGI" 
+                    ou équivalent.
+                </p>
+            </div>
+
+            <h2>4. Modalités de Paiement</h2>
+
+            <h3>4.1 Devise</h3>
+            <p>
+                <strong>Euro (EUR)</strong> pour tous les clients européens.
+            </p>
+
+            <h3>4.2 Moyen de Paiement</h3>
+            <p>
+                <strong>Virement bancaire international</strong> (via Wise ou IBAN classique) ou tout 
+                autre moyen convenu entre les parties.
+            </p>
+
+            <h3>4.3 Échéancier</h3>
+            <ul>
+                <li><strong>Acompte de 50%</strong> à la commande (déclenche le début du projet)</li>
+                <li><strong>Solde de 50%</strong> à la livraison</li>
+                <li><strong>Abonnement mensuel :</strong> Prélèvement automatique ou virement le 1er de chaque mois</li>
+            </ul>
+
+            <h3>4.4 Délai de Paiement</h3>
+            <p>
+                <strong>30 jours</strong> à compter de l'émission de la facture.
+            </p>
+
+            <p>
+                En cas de retard de paiement :
+            </p>
+            <ul>
+                <li>Pénalités de retard : <strong>3 fois le taux d'intérêt légal</strong></li>
+                <li>Indemnité forfaitaire pour frais de recouvrement : <strong>40 €</strong></li>
+                <li>Suspension possible du service après mise en demeure restée sans effet (15 jours)</li>
+            </ul>
+
+            <h2>5. Délai de Livraison</h2>
+
+            <p>
+                <strong>Délai standard : 5 à 7 jours ouvrés</strong> à compter de :
+            </p>
+            <ul>
+                <li>Réception du paiement du premier acompte (50%)</li>
+                <li>Validation du cahier des charges</li>
+                <li>Fourniture des accès nécessaires (Google Workspace, numéro de téléphone, etc.)</li>
+            </ul>
+
+            <p>
+                En cas de retard de livraison imputable au prestataire, le client peut demander 
+                l'application de <strong>pénalités de retard de 1% du prix TTC par semaine de retard</strong> 
+                (plafonné à 10% du prix total).
+            </p>
+
+            <h2>6. Obligations du Client</h2>
+
+            <h3>6.1 Fourniture des Informations</h3>
+            <p>
+                Le client s'engage à fournir :
+            </p>
+            <ul>
+                <li>Accès OAuth Google Workspace (Calendar, Gmail, Drive)</li>
+                <li>Numéro de téléphone professionnel (si canal téléphonique demandé)</li>
+                <li>Contenu et informations nécessaires à la configuration de l'IA</li>
+                <li>Logo, charte graphique (si applicable)</li>
+            </ul>
+
+            <h3>6.2 Coopération</h3>
+            <p>
+                Le client s'engage à :
+            </p>
+            <ul>
+                <li>Répondre aux demandes d'information sous 48h ouvrées</li>
+                <li>Tester l'assistant dans les 7 jours suivant la livraison</li>
+                <li>Signaler toute non-conformité dans le délai de garantie (30 jours)</li>
+            </ul>
+
+            <h2>7. Garanties</h2>
+
+            <h3>7.1 Garantie de Conformité</h3>
+            <p>
+                <strong>30 jours</strong> à compter de la livraison.
+            </p>
+
+            <p>
+                En cas de non-conformité avérée par rapport au cahier des charges validé :
+            </p>
+            <ul>
+                <li>Correction sans frais supplémentaire</li>
+                <li>Délai de correction : 5 jours ouvrés maximum</li>
+            </ul>
+
+            <p>
+                <strong>Exclusions :</strong>
+            </p>
+            <ul>
+                <li>Non-conformités résultant d'une mauvaise utilisation par le client</li>
+                <li>Modifications apportées par le client ou un tiers non autorisé</li>
+                <li>Pannes résultant de services tiers (OpenAI, Twilio, Google, Vapi.ai)</li>
+            </ul>
+
+            <h3>7.2 Disponibilité du Service (SLA)</h3>
+            <p>
+                <strong>Formule Enterprise uniquement :</strong> Garantie de disponibilité de 99% 
+                (hors maintenance programmée annoncée 48h à l'avance).
+            </p>
+
+            <p>
+                En cas de non-respect du SLA :
+            </p>
+            <ul>
+                <li>Avoir de 10% de l'abonnement mensuel par tranche de 1% de disponibilité manquante</li>
+                <li>Plafonné à 50% de l'abonnement mensuel</li>
+            </ul>
+
+            <h2>8. Résiliation</h2>
+
+            <h3>8.1 Résiliation par le Client</h3>
+            <p>
+                Le client peut résilier l'abonnement mensuel de maintenance avec un <strong>préavis 
+                de 30 jours</strong>.
+            </p>
+
+            <p>
+                <strong>Procédure :</strong>
+            </p>
+            <ul>
+                <li>Email à : <a href="mailto:support@orphika.io">support@orphika.io</a></li>
+                <li>Mention : "Résiliation abonnement Orphika - [Nom entreprise]"</li>
+                <li>Prise d'effet : Fin du mois suivant le préavis de 30 jours</li>
+            </ul>
+
+            <p>
+                <strong>Conséquences :</strong>
+            </p>
+            <ul>
+                <li>Aucun remboursement au prorata du mois en cours</li>
+                <li>Suppression des données du client 30 jours après résiliation (sauf demande de conservation)</li>
+                <li>Export des données fourni sur demande (format JSON)</li>
+            </ul>
+
+            <h3>8.2 Résiliation par le Prestataire</h3>
+            <p>
+                En cas de :
+            </p>
+            <ul>
+                <li>Non-paiement après mise en demeure (15 jours)</li>
+                <li>Manquement grave du client à ses obligations</li>
+                <li>Utilisation frauduleuse ou illégale du service</li>
+            </ul>
+
+            <p>
+                <strong>Préavis :</strong> 30 jours (sauf urgence justifiée)
+            </p>
+
+            <h2>9. Propriété Intellectuelle</h2>
+
+            <h3>9.1 Code Source</h3>
+            <p>
+                Le <strong>code source de l'assistant IA</strong> et les développements techniques 
+                restent la <strong>propriété exclusive d'Orphika IA Agency</strong>.
+            </p>
+
+            <h3>9.2 Licence d'Utilisation</h3>
+            <p>
+                Le client bénéficie d'une <strong>licence d'utilisation non exclusive, non transférable</strong> 
+                pour la durée du contrat, limitée à son usage professionnel interne.
+            </p>
+
+            <h3>9.3 Données du Client</h3>
+            <p>
+                Les <strong>données clients</strong> (conversations, rendez-vous, devis générés) 
+                restent la <strong>propriété du client</strong>.
+            </p>
+
+            <p>
+                Orphika agit en tant que <strong>sous-traitant</strong> au sens du RGPD (Article 28) 
+                pour le traitement de ces données.
+            </p>
+
+            <h2>10. Protection des Données Personnelles (RGPD)</h2>
+
+            <h3>10.1 Rôles RGPD</h3>
+            <ul>
+                <li><strong>Orphika IA Agency :</strong> Sous-traitant (Article 28 RGPD)</li>
+                <li><strong>Client :</strong> Responsable du traitement pour les données de ses clients finaux</li>
+            </ul>
+
+            <h3>10.2 Data Processing Agreement (DPA)</h3>
+            <div class="warning-box">
+                <p>
+                    Un <strong>Accord de Sous-Traitance (DPA)</strong> conforme à l'Article 28 du RGPD 
+                    sera <strong>signé avec chaque client</strong> avant la mise en production.
+                </p>
+                <p style="margin-top: 15px;">
+                    Ce DPA précise :
+                </p>
+                <ul style="margin-top: 10px;">
+                    <li>Les catégories de données traitées</li>
+                    <li>Les finalités du traitement</li>
+                    <li>Les obligations de sécurité</li>
+                    <li>Les durées de conservation</li>
+                    <li>Les sous-traitants ultérieurs (OpenAI, Twilio, Google, etc.)</li>
+                    <li>Les procédures en cas de violation de données</li>
+                </ul>
+            </div>
+
+            <h3>10.3 Engagements d'Orphika (Sous-Traitant)</h3>
+            <p>
+                Orphika s'engage à :
+            </p>
+            <ul>
+                <li>✅ Traiter les données <strong>uniquement selon les instructions du client</strong></li>
+                <li>✅ Garantir la <strong>confidentialité</strong> (clause NDA équipe)</li>
+                <li>✅ Mettre en œuvre des <strong>mesures de sécurité</strong> appropriées 
+                    (chiffrement, accès restreints, logs d'audit)</li>
+                <li>✅ Assister le client pour <strong>répondre aux demandes d'exercice de droits</strong> 
+                    (accès, rectification, suppression)</li>
+                <li>✅ <strong>Notifier toute violation de données sous 48h</strong> au client</li>
+                <li>✅ <strong>Supprimer ou restituer toutes les données</strong> à la fin du contrat 
+                    (sauf obligation légale de conservation)</li>
+                <li>✅ Fournir un <strong>certificat de suppression</strong> sur demande</li>
+            </ul>
+
+            <h3>10.4 Obligations du Client (Responsable de Traitement)</h3>
+            <p>
+                Le client s'engage à :
+            </p>
+            <ul>
+                <li>✅ <strong>Informer ses clients finaux</strong> du traitement par Orphika 
+                    (via mentions sur son site, messages vocaux)</li>
+                <li>✅ Obtenir le <strong>consentement</strong> si nécessaire ou s'assurer d'une base 
+                    légale valide</li>
+                <li>✅ Ne pas faire traiter de <strong>données sensibles</strong> (santé, religion, 
+                    opinion politique, données biométriques) sans accord préalable écrit d'Orphika</li>
+                <li>✅ Respecter les <strong>durées de conservation</strong> définies dans le DPA</li>
+                <li>✅ Gérer les <strong>demandes d'exercice de droits</strong> de ses clients finaux</li>
+            </ul>
+
+            <h3>10.5 Contact Protection des Données</h3>
+            <div class="contact-info">
+                <p><strong>Email DPO Orphika :</strong> <a href="mailto:dpo@orphika.io">dpo@orphika.io</a></p>
+                <p><strong>Support RGPD :</strong> <a href="mailto:support@orphika.io">support@orphika.io</a></p>
+            </div>
+
+            <p>
+                Pour plus d'informations, consultez notre 
+                <a href="#" onclick="showModal('confidentialite')">Politique de Confidentialité complète</a>.
+            </p>
+
+            <h2>11. Responsabilité et Limitation</h2>
+
+            <h3>11.1 Limitation de Responsabilité</h3>
+            <p>
+                La responsabilité d'Orphika est <strong>limitée au montant total payé</strong> par le 
+                client pour la prestation en cause (installation + 12 mois de maintenance maximum).
+            </p>
+
+            <h3>11.2 Exclusions de Responsabilité</h3>
+            <p>
+                Orphika ne peut être tenu responsable de :
+            </p>
+            <ul>
+                <li>❌ <strong>Dommages indirects :</strong> Perte de chiffre d'affaires, perte de clients, 
+                    perte de chance, préjudice d'image</li>
+                <li>❌ <strong>Pannes de services tiers :</strong> OpenAI, Twilio, Google, Vapi.ai, 
+                    opérateurs téléphoniques</li>
+                <li>❌ <strong>Force majeure :</strong> Catastrophes naturelles, cyberattaques, guerre, 
+                    émeutes, grèves</li>
+                <li>❌ <strong>Mauvaise utilisation :</strong> Utilisation non conforme, modifications 
+                    non autorisées</li>
+                <li>❌ <strong>Contenu fourni par le client :</strong> Informations inexactes, 
+                    contenus illicites</li>
+            </ul>
+
+            <h3>11.3 Assurance</h3>
+            <p>
+                Orphika dispose d'une assurance responsabilité civile professionnelle couvrant les 
+                dommages causés dans le cadre de son activité.
+            </p>
+            <p>
+                <strong>Attestation :</strong> Disponible sur demande à 
+                <a href="mailto:support@orphika.io">support@orphika.io</a>
+            </p>
+
+            <h2>12. Confidentialité</h2>
+
+            <h3>12.1 Engagement de Confidentialité</h3>
+            <p>
+                Les deux parties s'engagent à :
+            </p>
+            <ul>
+                <li>Ne pas divulguer les informations confidentielles de l'autre partie</li>
+                <li>Utiliser ces informations uniquement dans le cadre du contrat</li>
+                <li>Protéger ces informations avec le même niveau de soin que leurs propres informations 
+                    confidentielles</li>
+            </ul>
+
+            <h3>12.2 Durée</h3>
+            <p>
+                Cet engagement de confidentialité perdure pendant <strong>5 ans</strong> après la 
+                fin du contrat.
+            </p>
+
+            <h2>13. Droit Applicable et Juridiction</h2>
+
+            <h3>13.1 Droit Applicable</h3>
+            <p>
+                <strong>Pour les clients européens :</strong><br>
+                Le droit applicable est <strong>celui du pays du client</strong> (exemple : droit 
+                français pour un client français).
+            </p>
+
+            <p>
+                <strong>Pour les clients algériens :</strong><br>
+                Le droit applicable est le <strong>droit algérien</strong>.
+            </p>
+
+            <h3>13.2 Tribunaux Compétents</h3>
+            <p>
+                En cas de litige :
+            </p>
+            <ul>
+                <li><strong>Clients européens :</strong> Tribunaux du pays de résidence du client</li>
+                <li><strong>Clients algériens :</strong> Tribunaux d'Alger</li>
+            </ul>
+
+            <h3>13.3 Médiation</h3>
+            <p>
+                Avant toute action judiciaire, les parties s'engagent à rechercher une 
+                <strong>solution amiable</strong> pendant un délai de <strong>30 jours</strong>.
+            </p>
+
+            <p>
+                Le client peut également recourir à :
+            </p>
+            <ul>
+                <li><strong>France :</strong> Médiateur de la consommation (si consommateur)</li>
+                <li><strong>UE :</strong> Plateforme européenne de règlement en ligne des litiges : 
+                    <a href="https://ec.europa.eu/consumers/odr" target="_blank">https://ec.europa.eu/consumers/odr</a></li>
+            </ul>
+
+            <h2>14. Dispositions Diverses</h2>
+
+            <h3>14.1 Modifications des CGV</h3>
+            <p>
+                Ces CGV peuvent être modifiées à tout moment. Les clients actifs seront informés par 
+                email <strong>30 jours avant</strong> l'entrée en vigueur des nouvelles conditions.
+            </p>
+
+            <h3>14.2 Nullité Partielle</h3>
+            <p>
+                Si une clause est déclarée nulle ou inapplicable, les autres clauses restent pleinement 
+                applicables.
+            </p>
+
+            <h3>14.3 Acceptation</h3>
+            <div class="success-box">
+                <p>
+                    <strong>En commandant nos services, le client reconnaît avoir pris connaissance 
+                    des présentes CGV et les accepter sans réserve.</strong>
+                </p>
+                <p style="margin-top: 10px;">
+                    Une case à cocher sera présente sur le formulaire de commande/devis pour 
+                    confirmer l'acceptation explicite.
+                </p>
+            </div>
+
+            <h2>15. Contact</h2>
+
+            <div class="contact-info">
+                <p><strong>Questions sur les CGV :</strong></p>
+                <p>📧 <a href="mailto:contact@orphika.io">contact@orphika.io</a></p>
+                <p>📧 <a href="mailto:support@orphika.io">support@orphika.io</a></p>
+                
+                <p style="margin-top: 20px;"><strong>Questions RGPD :</strong></p>
+                <p>📧 <a href="mailto:dpo@orphika.io">dpo@orphika.io</a></p>
+            </div>
 
             <div class="footer">
-                <p><strong>Dernière mise à jour :</strong> Novembre 2026</p>
+                <p><strong>Dernière mise à jour :</strong> Janvier 2025</p>
                 <p><strong>Version :</strong> 1.0</p>
                 <p><strong>Conforme RGPD</strong> (Règlement UE 2016/679)</p>
                 <p>© 2025 Orphika IA Agency - Tous droits réservés</p>
