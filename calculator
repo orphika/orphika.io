@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur ROI - Orphika | Automatisation IA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Charte graphique Orphika.io */
+        :root {
+            --orphika-primary: #0F172A;    /* Bleu nuit */
+            --orphika-secondary: #1E40AF;  /* Bleu royal */
+            --orphika-accent: #3B82F6;     /* Bleu vif */
+            --orphika-gradient: linear-gradient(135deg, #0F172A 0%, #1E40AF 50%, #3B82F6 100%);
+            --orphika-light: #60A5FA;      /* Bleu clair */
+            --orphika-success: #10B981;    /* Vert émeraude */
+            --orphika-danger: #EF4444;     /* Rouge */
+            --orphika-warning: #F59E0B;    /* Orange */
+            --orphika-gray: #6B7280;       /* Gris */
+            --orphika-light-bg: #F8FAFC;   /* Fond clair */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+        
+        body {
+            background: var(--orphika-light-bg);
+            color: var(--orphika-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+            overflow: hidden;
+            border: 1px solid #E2E8F0;
+        }
+        
+        .header {
+            background: var(--orphika-gradient);
+            color: white;
+            padding: 30px 25px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            background: rgba(255, 255, 255, 0.2);
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+        
+        .tagline {
+            font-size: 14px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .content {
+            padding: 35px 30px 30px;
+        }
+        
+        .title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--orphika-primary);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .subtitle {
+            color: var(--orphika-gray);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        
+        .question-group {
+            margin-bottom: 25px;
+        }
+        
+        .question-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--orphika-primary);
+            font-size: 15px;
+        }
+        
+        .input-wrapper {
+            position: relative;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #E5E7EB;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--orphika-accent);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+        }
+        
+        .input-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--orphika-gray);
+        }
+        
+        .calculate-btn {
+            background: var(--orphika-secondary);
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 18px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 10px;
+        }
+        
+        .calculate-btn:hover {
+            background: var(--orphika-accent);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
+        
+        .result-container {
+            display: none;
+            margin-top: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, #F0F9FF 0%, #EFF6FF 100%);
+            border-radius: 16px;
+            border-left: 5px solid var(--orphika-accent);
+            animation: fadeIn 0.8s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .result-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--orphika-primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .score-display {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--orphika-secondary);
+            text-align: center;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .score-label {
+            font-size: 16px;
+            color: var(--orphika-gray);
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .interpretation {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 15px;
+            border: 1px solid #E5E7EB;
+        }
+        
+        .cta-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .primary-cta {
+            background: var(--orphika-gradient);
+            color: white;
+            border: none;
+            padding: 20px 30px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            width: 100%;
+            text-decoration: none;
+            margin-bottom: 15px;
+            box-shadow: 0 10px 20px rgba(15, 23, 42, 0.2);
+        }
+        
+        .primary-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(15, 23, 42, 0.3);
+        }
+        
+        .secondary-cta {
+            background: #F3F4F6;
+            color: var(--orphika-gray);
+            border: 1px solid #D1D5DB;
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            width: 100%;
+            text-decoration: none;
+        }
+        
+        .secondary-cta:hover {
+            background: #E5E7EB;
+            color: var(--orphika-primary);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #E5E7EB;
+            color: var(--orphika-gray);
+            font-size: 14px;
+        }
+        
+        .footer a {
+            color: var(--orphika-accent);
+            text-decoration: none;
+        }
+        
+        .score-bar {
+            height: 10px;
+            background: #E5E7EB;
+            border-radius: 5px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+        
+        .score-progress {
+            height: 100%;
+            background: var(--orphika-gradient);
+            width: 0%;
+            transition: width 1.5s ease;
+            border-radius: 5px;
+        }
+        
+        .score-details {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 14px;
+            color: var(--orphika-gray);
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                border-radius: 15px;
+            }
+            
+            .header {
+                padding: 25px 20px;
+            }
+            
+            .content {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                ORPHIKA
+            </div>
+            <div class="tagline">Agence d'Automatisation IA pour PME & TPE</div>
+        </div>
+        
+        <div class="content">
+            <h1 class="title">📊 Votre Score d'Automatisation</h1>
+            <p class="subtitle">En 3 questions, découvrez votre potentiel d'optimisation avec l'IA</p>
+            
+            <form id="roiCalculator">
+                <div class="question-group">
+                    <label class="question-label">
+                        <i class="fas fa-calendar-xmark" style="color: var(--orphika-danger); margin-right: 8px;"></i>
+                        Combien de RDV/clients manquez-vous chaque mois par manque de suivi ?
+                    </label>
+                    <div class="input-wrapper">
+                        <input type="number" id="rdvManques" min="0" max="50" placeholder="Ex: 5" required>
+                        <span class="input-icon">📅</span>
+                    </div>
+                </div>
+                
+                <div class="question-group">
+                    <label class="question-label">
+                        <i class="fas fa-file-invoice-dollar" style="color: var(--orphika-warning); margin-right: 8px;"></i>
+                        Combien d'heures par semaine passez-vous sur des tâches administratives répétitives ?
+                    </label>
+                    <div class="input-wrapper">
+                        <input type="number" id="heuresAdmin" min="0" max="80" placeholder="Ex: 15" required>
+                        <span class="input-icon">⏱️</span>
+                    </div>
+                </div>
+                
+                <div class="question-group">
+                    <label class="question-label">
+                        <i class="fas fa-people-arrows" style="color: var(--orphika-accent); margin-right: 8px;"></i>
+                        Votre équipe est-elle souvent en attente d'informations pour avancer ?
+                    </label>
+                    <div class="input-wrapper">
+                        <select id="attenteInfos" required>
+                            <option value="">Sélectionnez une réponse</option>
+                            <option value="3">Toujours - C'est notre principal frein</option>
+                            <option value="2">Souvent - Plusieurs fois par semaine</option>
+                            <option value="1">Parfois - De temps en temps</option>
+                            <option value="0">Rarement - Nous sommes bien organisés</option>
+                        </select>
+                        <span class="input-icon">📊</span>
+                    </div>
+                </div>
+                
+                <button type="submit" class="calculate-btn" id="calculateBtn">
+                    <i class="fas fa-chart-line"></i>
+                    Calculer mon potentiel d'automatisation
+                </button>
+            </form>
+            
+            <div class="result-container" id="resultContainer">
+                <div class="result-title">
+                    <i class="fas fa-trophy" style="color: var(--orphika-warning);"></i>
+                    Votre Score d'Optimisation
+                </div>
+                
+                <div class="score-display" id="scoreDisplay">0</div>
+                <div class="score-label" id="scoreLabel">Calcul en cours...</div>
+                
+                <div class="score-bar">
+                    <div class="score-progress" id="scoreProgress"></div>
+                </div>
+                
+                <div class="score-details">
+                    <span>Faible</span>
+                    <span>Modéré</span>
+                    <span>Élevé</span>
+                    <span>Exceptionnel</span>
+                </div>
+                
+                <div class="interpretation" id="interpretation">
+                    <!-- Le texte sera inséré par JavaScript -->
+                </div>
+                
+                <div class="cta-container" id="ctaContainer">
+                    <!-- Les CTA seront insérés par JavaScript -->
+                </div>
+            </div>
+            
+            <div class="footer">
+                <p>Vos données sont traitées de manière sécurisée et ne sont jamais partagées.</p>
+                <p>Un problème ? <a href="mailto:contact@orphika.io">contact@orphika.io</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('roiCalculator').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Récupération des valeurs
+            const rdvManques = parseInt(document.getElementById('rdvManques').value) || 0;
+            const heuresAdmin = parseInt(document.getElementById('heuresAdmin').value) || 0;
+            const attenteInfos = parseInt(document.getElementById('attenteInfos').value) || 0;
+            
+            // Calcul du score (sur 100)
+            let score = 0;
+            
+            // RDV manqués : jusqu'à 40 points
+            score += Math.min(rdvManques * 4, 40);
+            
+            // Heures administratives : jusqu'à 40 points
+            score += Math.min(heuresAdmin * 1.5, 40);
+            
+            // Attente d'informations : jusqu'à 20 points
+            score += attenteInfos * 6.67;
+            
+            // Arrondi
+            score = Math.min(Math.round(score), 100);
+            
+            // Affichage du résultat
+            document.getElementById('resultContainer').style.display = 'block';
+            document.getElementById('scoreDisplay').textContent = score;
+            
+            // Animation du score
+            animateScore(score);
+            
+            // Détermination du niveau
+            let niveau, couleur, interpretation, ctaText;
+            
+            if (score >= 80) {
+                niveau = "Exceptionnel";
+                couleur = "var(--orphika-success)";
+                interpretation = `<p><strong>Votre entreprise a un potentiel d'automatisation exceptionnel !</strong></p>
+                <p>Avec ${score} points, vous pourriez économiser <strong>plus de 40h/mois</strong> et augmenter vos revenus de <strong>15-25%</strong> grâce à une automatisation intelligente.</p>
+                <p>Vos processus sont mûrs pour une transformation immédiate.</p>`;
+                ctaText = "🚀 Je veux libérer 40h/mois pour développer mon entreprise";
+            } else if (score >= 60) {
+                niveau = "Élevé";
+                couleur = "var(--orphika-accent)";
+                interpretation = `<p><strong>Votre potentiel d'optimisation est élevé !</strong></p>
+                <p>Avec ${score} points, vous pourriez récupérer <strong>20-30h/mois</strong> et réduire vos coûts opérationnels de <strong>10-20%</strong>.</p>
+                <p>Quelques ajustements stratégiques pourraient doubler votre productivité.</p>`;
+                ctaText = "⚡ Je veux récupérer 30h/mois pour me concentrer sur la croissance";
+            } else if (score >= 40) {
+                niveau = "Modéré";
+                couleur = "var(--orphika-warning)";
+                interpretation = `<p><strong>Vous avez un potentiel d'automatisation modéré.</strong></p>
+                <p>Avec ${score} points, vous pourriez gagner <strong>10-20h/mois</strong> et améliorer votre service client.</p>
+                <p>Une approche ciblée sur vos points de friction les plus coûteux pourrait vous faire gagner des milliers d'euros.</p>`;
+                ctaText = "📈 Je veux optimiser mes processus et gagner 20h/mois";
+            } else {
+                niveau = "Faible";
+                couleur = "var(--orphika-gray)";
+                interpretation = `<p><strong>Votre potentiel d'automatisation est actuellement faible.</strong></p>
+                <p>Cela peut signifier que vous avez déjà de bons processus ou que vous sous-estimez certaines pertes de temps.</p>
+                <p>Nous recommandons un audit gratuit pour identifier des opportunités cachées.</p>`;
+                ctaText = "🔍 Je veux un audit gratuit de mes processus";
+            }
+            
+            // Mise à jour de l'interface
+            document.getElementById('scoreDisplay').style.color = couleur;
+            document.getElementById('scoreLabel').textContent = `Niveau : ${niveau}`;
+            document.getElementById('scoreLabel').style.color = couleur;
+            document.getElementById('interpretation').innerHTML = interpretation;
+            
+            // Génération des CTA
+            const ctaContainer = document.getElementById('ctaContainer');
+            ctaContainer.innerHTML = `
+                <a href="https://orphika.fillout.com/diagnostique?score=${score}&rdv=${rdvManques}&heures=${heuresAdmin}" 
+                   class="primary-cta" target="_blank">
+                   <i class="fas fa-rocket"></i> ${ctaText}
+                </a>
+                <a href="#" class="secondary-cta" id="secondaryCta">
+                    <i class="fas fa-hand-point-left"></i> Je préfère laisser cette opportunité à la concurrence
+                </a>
+            `;
+            
+            // Scroll doux vers les résultats
+            document.getElementById('resultContainer').scrollIntoView({ behavior: 'smooth' });
+            
+            // Gestion du CTA secondaire
+            document.getElementById('secondaryCta').addEventListener('click', function(e) {
+                e.preventDefault();
+                if (confirm("Êtes-vous sûr de vouloir laisser vos concurrents prendre de l'avance avec l'IA ?")) {
+                    alert("Nous respectons votre choix. N'hésitez pas à revenir quand vous serez prêt à transformer votre entreprise.");
+                }
+            });
+        });
+        
+        // Animation du score
+        function animateScore(finalScore) {
+            const scoreElement = document.getElementById('scoreDisplay');
+            const progressBar = document.getElementById('scoreProgress');
+            
+            let currentScore = 0;
+            const increment = finalScore / 50; // 50 étapes d'animation
+            
+            const timer = setInterval(() => {
+                currentScore += increment;
+                if (currentScore >= finalScore) {
+                    currentScore = finalScore;
+                    clearInterval(timer);
+                }
+                
+                scoreElement.textContent = Math.round(currentScore);
+                progressBar.style.width = `${currentScore}%`;
+            }, 30);
+        }
+        
+        // Animation d'entrée discrète
+        window.addEventListener('load', function() {
+            document.querySelector('.container').style.opacity = '0';
+            document.querySelector('.container').style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                document.querySelector('.container').style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                document.querySelector('.container').style.opacity = '1';
+                document.querySelector('.container').style.transform = 'translateY(0)';
+            }, 300);
+        });
+    </script>
+</body>
+</html>
